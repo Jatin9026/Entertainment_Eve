@@ -1,13 +1,10 @@
+import AboutUsSection from "./Components/About_Us";
+import GitarLandingPage from "./Components/Hero_Section";
 
-
-function App() {
-
-
-  return (
-    <>
-      <div className="bg-red-500"> hellojiii </div>
-    </>
-  )
+function App(){
+  return <>
+  <GitarLandingPage/>
+  <AboutUsSection/>
+  </>
 }
-
-export default App
+export default App;
