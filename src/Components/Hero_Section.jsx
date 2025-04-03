@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-const GitarLandingPage = () => {
+const LandingPage = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -27,52 +27,39 @@ const GitarLandingPage = () => {
             src="https://demo.awaikenthemes.com/assets/videos/gitar-video.mp4"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
         </video>
       </div>
 
       {/* Navigation Bar------> */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-purple-950/80 relative z-20">
-        <div className="flex items-center">
-          <div>
-            <svg
-              className="w-6 h-6 text-purple-950"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M8 16a2 2 0 100-4 2 2 0 000 4zm0-14a2 2 0 100 4 2 2 0 000-4zm9 7a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <span className="text-2xl font-bold">
-            <img
-              src="https://html.awaikenthemes.com/gitar/images/logo.svg"
-              alt="Logo"
-            />
-          </span>
-        </div>
+      <nav className="flex items-center justify-between px-6 py-4 bg-transparent relative z-20 border-b border-white-800">
+      <div className="w-50 h-16 overflow-hidden">
+  <span className="block w-full h-full transition-transform duration-300 scale-240">
+    <img className="w-full h-full object-contain" src="Images/image.png" alt="Logo" />
+  </span>
+</div>
+
 
         <div className="hidden md:flex items-center space-x-8">
           <a href="#" className="hover:text-[#00FCB8] font-medium">
             HOME
           </a>
           <a href="#" className="hover:text-[#00FCB8] font-medium">
-            ABOUT US
+            Past Perfomers
           </a>
           <a href="#" className="hover:text-[#00FCB8] font-medium">
             SERVICES
           </a>
           <a href="#" className="hover:text-[#00FCB8] font-medium">
-            BLOG
+            Glimpses
           </a>
           <a href="#" className="hover:text-[#00FCB8] font-medium">
-            PAGES
+            Tickets
           </a>
           <a href="#" className="hover:text-[#00FCB8] font-medium">
             CONTACT US
           </a>
         </div>
-
-        <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-2 px-6 rounded-full  hover:transition-all duration-400 ease-in-out">
+        <button className="text-white-500 font-bold py-2 px-6 hover:transition-all duration-400 ease-in-out hover:bg-[#00FCB8] rounded-full">  
           BOOK NOW
         </button>
       </nav>
@@ -83,11 +70,11 @@ const GitarLandingPage = () => {
           <h3 className="text-3xl mb-2">TONIGHT</h3>
           <div className="relative">
             <h1 className="text-7xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-[#00FCB8] via-[#40fdca] to-[#80fedd] text-transparent bg-clip-text">
-              PROGRESSIVE
+              Endeavour
             </h1>
           </div>
           <h2 className="text-6xl md:text-7xl font-bold mb-8 text-white">
-            TRANCE NIGHT
+            Asspire to Acquire
           </h2>
           <p className="text-lg mb-12">
             Dive into the heart of live music with a band that blends energy,
@@ -96,11 +83,11 @@ const GitarLandingPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-transparent hover:bg-00FCB8-900 text-white font-bold py-3 px-8 rounded-full border border-[#00FCB8]/30">
-              ALL ALBUMS
+          <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-3 px-8 rounded-full">
+              Past Performers
             </button>
             <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-3 px-8 rounded-full">
-              BOOK A TABLE
+              Tickets
             </button>
           </div>
         </div>
@@ -128,4 +115,4 @@ const GitarLandingPage = () => {
   );
 };
 
-export default GitarLandingPage;
+export default LandingPage;
