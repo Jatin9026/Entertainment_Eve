@@ -4,7 +4,7 @@ import GitarLandingPage from "./Components/Hero_Section";
 function App(){
   return <>
   <GitarLandingPage/>
-  <AboutUsSection/>
+  {/* <AboutUsSection/> */}
   </>
 }
 export default App;
