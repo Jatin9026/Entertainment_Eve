@@ -1,10 +1,8 @@
 import React, { useRef, useEffect } from "react";
-import BlobCursor from "../React_bits/BlobCursor";
-import BlurText from "../React_bits/BlurText";
+// import BlobCursor from "../React_bits/BlobCursor";
+// import BlurText from "../React_bits/BlurText";
+import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
 
-const handleAnimationComplete = () => {
-  console.log("Animation completed!");
-};
 
 const LandingPage = () => {
   const videoRef = useRef(null);
@@ -36,11 +34,52 @@ const LandingPage = () => {
               type="video/mp4"
             />
           </video>
+          <div className="relative z-10 w-9/12 h-full bg-black">
+            <Hyperspeed
+              effectOptions={{
+                onSpeedUp: () => {},
+                onSlowDown: () => {},
+                distortion: 'turbulentDistortion',
+                length: 400,
+                roadWidth: 10,
+                islandWidth: 2,
+                lanesPerRoad: 4,
+                fov: 90,
+                fovSpeedUp: 150,
+                speedUp: 2,
+                carLightsFade: 0.4,
+                totalSideLightSticks: 20,
+                lightPairsPerRoadWay: 40,
+                shoulderLinesWidthPercentage: 0.5,
+                brokenLinesWidthPercentage: 0.1,
+                brokenLinesLengthPercentage: 0.5,
+                lightStickWidth: [0.12, 0.5],
+                lightStickHeight: [1.3, 1.7],
+                movingAwaySpeed: [60, 80],
+                movingCloserSpeed: [-120, -160],
+                carLightsLength: [400 * 0.03, 400 * 0.2],
+                carLightsRadius: [0.05, 0.14],
+                carWidthPercentage: [0.3, 0.5],
+                carShiftX: [-0.8, 0.8],
+                carFloorSeparation: [0, 5],
+                colors: {
+                  roadColor: null,      // Road is transparent
+                  islandColor: null,    // Island is transparent
+                  background: null,     // Background is transparent
+                  shoulderLines: 0x00fcb8,
+                  brokenLines: 0x00fcb8,
+                  leftCars: [0x00fcb8, 0x00d0a1, 0x00a987],
+                  rightCars: [0x00fcb8, 0x00d0a1, 0x00a987],
+                  sticks: 0x00fcb8,
+                }
+              }}
+            />
+          </div>
         </div>
-        {/* Navigation Bar------> */}
+        {/* Navigation Bar------> 
         <nav className="flex items-center justify-between px-6 py-4 bg-transparent relative z-20 border-b border-white-800">
           <div className="w-50 h-16 overflow-hidden">
-            <span className="block w-full h-full transition-transform duration-300 scale-240">
+            <span className="block w-full h-full transition-transform duration-300 scale-300">
               <img
                 className=" w-full h-full object-contain"
                 src="Images/image.png"
@@ -72,7 +111,7 @@ const LandingPage = () => {
           <button className="text-white-500 font-bold py-2 px-6 hover:transition-all duration-400 ease-in-out hover:bg-[#00FCB8] rounded-full">
             BOOK NOW
           </button>
-        </nav>
+        </nav> */}
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center text-center h-screen px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -83,7 +122,7 @@ const LandingPage = () => {
               </h1>
             </div>
             <h2 className="text-6xl md:text-7xl font-bold mb-8 text-white">
-              Asspire to Acquire
+              Aspire to Acquire
             </h2>
             <p className="text-lg mb-12">
               Dive into the heart of live music with a band that blends energy,
@@ -102,10 +141,10 @@ const LandingPage = () => {
           </div>
 
           {/* Scroll down indicator */}
-          <div className="absolute bottom-30">
-            <div className="border-2 border-[#00FCB8] rounded-full p-2 animate-bounce">
+          <div className="absolute bottom-15">
+            <div className="border-2 border-[#ffffff] rounded-full p-2 animate-bounce">
               <svg
-                className="w-6 h-6 text-[#00FCB8]"
+                className="w-6 h-6 text-[#ffffff]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
