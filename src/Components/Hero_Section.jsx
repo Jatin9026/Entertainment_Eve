@@ -5,14 +5,6 @@ import "../styles/fonts.css";
 
 const LandingPage = () => {
   const videoRef = useRef(null);
-  const hyperspeedRef = useRef(null);
-
-  useEffect(() => {
-    if (hyperspeedRef.current && hyperspeedRef.current.speedUp) {
-      hyperspeedRef.current.speedUp(); // Trigger speed-up mode
-    }
-  }, []);
-
 
   useEffect(() => {
     // Set video properties when component mounts
@@ -43,7 +35,6 @@ const LandingPage = () => {
           </video> */}
           <div className="relative z-10 w-full h-full">
             <Hyperspeed
-              ref={hyperspeedRef}
               effectOptions={{
                 onSpeedUp: () => {},
                 onSlowDown: () => {},
@@ -84,6 +75,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
+
         {/* Navigation Bar------> 
         <nav className="flex items-center justify-between px-6 py-4 bg-transparent relative z-20 border-b border-white-800">
           <div className="w-50 h-16 overflow-hidden">
@@ -120,6 +112,7 @@ const LandingPage = () => {
             BOOK NOW
           </button>
         </nav> */}
+        
         {/* Hero Section */}
         <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
           <div className="max-w-4xl pl-8 sm:pl-16">
