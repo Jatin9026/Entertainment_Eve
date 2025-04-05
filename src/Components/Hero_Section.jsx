@@ -1,6 +1,4 @@
 import React, { useRef, useEffect } from "react";
-// import BlobCursor from "../React_bits/BlobCursor";
-// import BlurText from "../React_bits/BlurText";
 import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
 import "../styles/fonts.css";
 
