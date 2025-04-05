@@ -1,18 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
 import "../styles/fonts.css";
+import "../styles/buttons.css"; // Import your CSS file for custom styles
 
 
 const LandingPage = () => {
   const videoRef = useRef(null);
-  const hyperspeedRef = useRef(null);
-
-  useEffect(() => {
-    if (hyperspeedRef.current && hyperspeedRef.current.speedUp) {
-      hyperspeedRef.current.speedUp(); // Trigger speed-up mode
-    }
-  }, []);
-
 
   useEffect(() => {
     // Set video properties when component mounts
@@ -43,7 +36,6 @@ const LandingPage = () => {
           </video> */}
           <div className="relative z-10 w-full h-full">
             <Hyperspeed
-              ref={hyperspeedRef}
               effectOptions={{
                 onSpeedUp: () => {},
                 onSlowDown: () => {},
@@ -84,6 +76,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
+
         {/* Navigation Bar------> 
         <nav className="flex items-center justify-between px-6 py-4 bg-transparent relative z-20 border-b border-white-800">
           <div className="w-50 h-16 overflow-hidden">
@@ -120,12 +113,13 @@ const LandingPage = () => {
             BOOK NOW
           </button>
         </nav> */}
+        
         {/* Hero Section */}
         <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
           <div className="max-w-4xl pl-8 sm:pl-16">
             <h3 className="text-3xl mb-2">TONIGHT</h3>
             <div className="relative">
-              <h1 className="text-7xl md:text-8xl custom-font font-bold mb-4 bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#099499] text-transparent bg-clip-text">
+              <h1 className="text-7xl md:text-8xl custom-font mb-4 bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#099499] text-transparent bg-clip-text">
                 Entertainment
                 Eve
               </h1>
@@ -140,10 +134,10 @@ const LandingPage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-start gap-4">
-              <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-3 px-8 rounded-full">
+              <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
                 Past Performers
               </button>
-              <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-3 px-8 rounded-full">
+              <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
                 Tickets
               </button>
             </div>
