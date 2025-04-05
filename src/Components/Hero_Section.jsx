@@ -68,10 +68,10 @@ const LandingPage = () => {
                   background: null,
                   shoulderLines: 0x00fcb8,
                   brokenLines: 0x00fcb8,
-                  leftCars: [0x00fcb8, 0x00d0a1, 0x00a987],
-                  rightCars: [0x00fcb8, 0x00d0a1, 0x00a987],
+                  leftCars: [0x068766, 0x0a9b70, 0x11b57d],
+                  rightCars: [0x068766, 0x0a9b70, 0x11b57d],
                   sticks: 0x00fcb8,
-                }
+                }                
               }}
             />
           </div>
