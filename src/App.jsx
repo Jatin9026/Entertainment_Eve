@@ -1,10 +1,10 @@
 import LandingPage from "./Components/Hero_Section";
-import HeroSection from "./Components/Landing";
+import Past_Performers from "./Components/Past_Performers";
 
 function App(){
   return <>
   <LandingPage/>
-  {/* <HeroSection/> */}
+  <Past_Performers/>
   </>
 }
 export default App;
