@@ -20,7 +20,7 @@ const LandingPage = () => {
       <div className="min-h-screen text-white font-sans relative overflow-hidden">
         {/* Video Background */} //
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#001711] z-10"></div>
+          <div className="absolute inset-0 bg-[#010f0b] z-10"></div>
           {/* <video
             ref={videoRef}
             className="absolute min-w-full min-h-full object-cover"
@@ -142,6 +142,15 @@ const LandingPage = () => {
               </button>
             </div>
           </div>
+
+          {/* Overlapping Circles */}
+          <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
+            {/* Back Circle: Initially lower z-index, but on hover increases */}
+            <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
+            {/* Front Circle */}
+            <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white absolute mt-15 z-20 transition-all duration-300 bg-[url(https://in.bmscdn.com/events/moviecard/ET00429769.jpg)] bg-cover bg-center"></div>
+          </div>
+
           {/* Scroll down indicator */}
           <div className="absolute bottom-15 self-center">
             <div className="border-2 border-[#ffffff] rounded-full p-2 animate-bounce">
