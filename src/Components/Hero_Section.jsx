@@ -2,10 +2,19 @@ import React, { useRef, useEffect } from "react";
 // import BlobCursor from "../React_bits/BlobCursor";
 // import BlurText from "../React_bits/BlurText";
 import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
+import "../styles/fonts.css";
 
 
 const LandingPage = () => {
   const videoRef = useRef(null);
+  const hyperspeedRef = useRef(null);
+
+  useEffect(() => {
+    if (hyperspeedRef.current && hyperspeedRef.current.speedUp) {
+      hyperspeedRef.current.speedUp(); // Trigger speed-up mode
+    }
+  }, []);
+
 
   useEffect(() => {
     // Set video properties when component mounts
@@ -17,11 +26,11 @@ const LandingPage = () => {
   return (
     <>
       <div className="fixed top-0 left-0 z-[9999] pointer-events-none"></div>
-      <div className="min-h-screen bg-black text-white font-sans relative overflow-hidden">
+      <div className="min-h-screen text-white font-sans relative overflow-hidden">
         {/* Video Background */} //
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black z-10"></div>
-          <video
+          <div className="absolute inset-0 bg-[#001711] z-10"></div>
+          {/* <video
             ref={videoRef}
             className="absolute min-w-full min-h-full object-cover"
             autoPlay
@@ -33,9 +42,10 @@ const LandingPage = () => {
               src=""
               type="video/mp4"
             />
-          </video>
-          <div className="relative z-10 w-9/12 h-full bg-black">
+          </video> */}
+          <div className="relative z-10 w-full h-full">
             <Hyperspeed
+              ref={hyperspeedRef}
               effectOptions={{
                 onSpeedUp: () => {},
                 onSlowDown: () => {},
@@ -44,8 +54,8 @@ const LandingPage = () => {
                 roadWidth: 10,
                 islandWidth: 2,
                 lanesPerRoad: 4,
-                fov: 90,
-                fovSpeedUp: 150,
+                fov: 150,
+                fovSpeedUp: 90,
                 speedUp: 2,
                 carLightsFade: 0.4,
                 totalSideLightSticks: 20,
@@ -63,9 +73,9 @@ const LandingPage = () => {
                 carShiftX: [-0.8, 0.8],
                 carFloorSeparation: [0, 5],
                 colors: {
-                  roadColor: null,      // Road is transparent
-                  islandColor: null,    // Island is transparent
-                  background: null,     // Background is transparent
+                  roadColor: null,
+                  islandColor: null,
+                  background: null,
                   shoulderLines: 0x00fcb8,
                   brokenLines: 0x00fcb8,
                   leftCars: [0x00fcb8, 0x00d0a1, 0x00a987],
@@ -113,12 +123,13 @@ const LandingPage = () => {
           </button>
         </nav> */}
         {/* Hero Section */}
-        <div className="flex flex-col items-center justify-center text-center h-screen px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
+          <div className="max-w-4xl pl-8 sm:pl-16">
             <h3 className="text-3xl mb-2">TONIGHT</h3>
             <div className="relative">
-              <h1 className="text-7xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-[#00FCB8] via-[#40fdca] to-[#80fedd] text-transparent bg-clip-text">
-                Endeavour
+              <h1 className="text-7xl md:text-8xl custom-font font-bold mb-4 bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#099499] text-transparent bg-clip-text">
+                Entertainment
+                Eve
               </h1>
             </div>
             <h2 className="text-6xl md:text-7xl font-bold mb-8 text-white">
@@ -130,7 +141,7 @@ const LandingPage = () => {
               bring every moment to life.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-start gap-4">
               <button className="bg-transparent hover:bg-[#00dca0] text-white-500 font-bold py-3 px-8 rounded-full">
                 Past Performers
               </button>
@@ -139,9 +150,8 @@ const LandingPage = () => {
               </button>
             </div>
           </div>
-
           {/* Scroll down indicator */}
-          <div className="absolute bottom-15">
+          <div className="absolute bottom-15 self-center">
             <div className="border-2 border-[#ffffff] rounded-full p-2 animate-bounce">
               <svg
                 className="w-6 h-6 text-[#ffffff]"
