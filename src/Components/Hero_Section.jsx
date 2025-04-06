@@ -16,12 +16,12 @@ const OverlappingGradientCircles = () => {
         transition={{
           duration: 0.3,
           ease: "easeInOut",
-          delay: 0.025,
+          //delay: 0.025,
           // scale: { type: "spring", duration: 0.4 },
         }}
-        className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-300 ease-in-out"
+        className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-500 ease-in-out"
       >
-        <BackgroundGradient className="rounded-full w-100 h-100 p-1">
+        <BackgroundGradient className="rounded-full w-100 h-100">
           <div
             className="w-full h-full rounded-full bg-cover bg-center"
             style={{
@@ -43,7 +43,7 @@ const OverlappingGradientCircles = () => {
         }}
         className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out"
       >
-        <BackgroundGradient className="rounded-full w-100 h-100 p-1">
+        <BackgroundGradient className="rounded-full w-100 h-100">
           <div
             className="w-full h-full rounded-full bg-cover bg-center"
             style={{
