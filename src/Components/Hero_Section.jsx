@@ -3,12 +3,24 @@ import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
 import { BackgroundGradient } from "./ui/Background_Gradient";
 import "../styles/fonts.css";
 import "../styles/buttons.css"; // Import your CSS file for custom styles
+import * as motion from "motion/react-client";
+import GradientText from "./React_bits/GradientText/GradientText";
 
 const OverlappingGradientCircles = () => {
   return (
     <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
       {/* Back Circle (lower z-index, hover brings it up) */}
-      <div className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-300 ease-in-out">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+          delay: 0.025,
+          // scale: { type: "spring", duration: 0.4 },
+        }}
+        className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-300 ease-in-out"
+      >
         <BackgroundGradient className="rounded-full w-100 h-100 p-1">
           <div
             className="w-full h-full rounded-full bg-cover bg-center"
@@ -18,10 +30,19 @@ const OverlappingGradientCircles = () => {
             }}
           ></div>
         </BackgroundGradient>
-      </div>
+      </motion.div>
 
       {/* Front Circle (higher z-index) */}
-      <div className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+          // scale: { type: "spring", duration: 0.4 },
+        }}
+        className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out"
+      >
         <BackgroundGradient className="rounded-full w-100 h-100 p-1">
           <div
             className="w-full h-full rounded-full bg-cover bg-center"
@@ -31,7 +52,7 @@ const OverlappingGradientCircles = () => {
             }}
           ></div>
         </BackgroundGradient>
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -149,20 +170,23 @@ const LandingPage = () => {
         {/* Hero Section */}
         <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
           <div className="max-w-4xl pl-8 sm:pl-16">
-            <h3 className="text-3xl mb-2">TONIGHT</h3>
+            <h3 className="text-4xl mb-2 font-mono">E-Cell Presents</h3>
             <div className="relative">
-              <h1 className="text-7xl md:text-8xl custom-font mb-4 bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#099499] text-transparent bg-clip-text">
-                Entertainment
-                Eve
-              </h1>
+              <GradientText
+                colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="text-7xl md:text-8xl custom-font mb-4"
+              >
+                Entertainment Eve
+              </GradientText>
             </div>
-            <h2 className="text-6xl md:text-7xl font-bold mb-8 text-white">
-              Aspire to Acquire
+            <h2 className="text-6xl md:text-7xl font-mono mb-8 text-white">
+              Enjoy the Evening!
             </h2>
-            <p className="text-lg mb-12">
-              Dive into the heart of live music with a band that blends energy,
-              emotion, and artistry. From intimate vibes to festival anthems, we
-              bring every moment to life.
+            <p className="text-xl mb-12">
+            Get ready for a night of non-stop fun, laughter, and unforgettable performances! <br></br>
+            Join us for an electrifying entertainment extravaganza that will leave you wanting more.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-start gap-4">
@@ -175,14 +199,16 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Overlapping Circles *
-          <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
+          {/* Overlapping Circles */}
+          <OverlappingGradientCircles />
+
+          {/*<div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
             {/* Back Circle: Initially lower z-index, but on hover increases *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
             {/* Front Circle *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white absolute mt-15 z-20 transition-all duration-300 bg-[url(https://in.bmscdn.com/events/moviecard/ET00429769.jpg)] bg-cover bg-center"></div>
           </div> */}
-          <OverlappingGradientCircles />
+
 
           {/* Scroll down indicator */}
           <div className="absolute bottom-15 self-center">
