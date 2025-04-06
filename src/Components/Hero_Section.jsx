@@ -1,8 +1,40 @@
 import React, { useRef, useEffect } from "react";
 import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
+import { BackgroundGradient } from "./ui/Background_Gradient";
 import "../styles/fonts.css";
 import "../styles/buttons.css"; // Import your CSS file for custom styles
 
+const OverlappingGradientCircles = () => {
+  return (
+    <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
+      {/* Back Circle (lower z-index, hover brings it up) */}
+      <div className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-300 ease-in-out">
+        <BackgroundGradient className="rounded-full w-100 h-100 p-1">
+          <div
+            className="w-full h-full rounded-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s')",
+            }}
+          ></div>
+        </BackgroundGradient>
+      </div>
+
+      {/* Front Circle (higher z-index) */}
+      <div className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out">
+        <BackgroundGradient className="rounded-full w-100 h-100 p-1">
+          <div
+            className="w-full h-full rounded-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://in.bmscdn.com/events/moviecard/ET00429769.jpg')",
+            }}
+          ></div>
+        </BackgroundGradient>
+      </div>
+    </div>
+  );
+};
 
 const LandingPage = () => {
   const videoRef = useRef(null);
@@ -143,13 +175,14 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Overlapping Circles */}
+          {/* Overlapping Circles *
           <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
-            {/* Back Circle: Initially lower z-index, but on hover increases */}
+            {/* Back Circle: Initially lower z-index, but on hover increases *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
-            {/* Front Circle */}
+            {/* Front Circle *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white absolute mt-15 z-20 transition-all duration-300 bg-[url(https://in.bmscdn.com/events/moviecard/ET00429769.jpg)] bg-cover bg-center"></div>
-          </div>
+          </div> */}
+          <OverlappingGradientCircles />
 
           {/* Scroll down indicator */}
           <div className="absolute bottom-15 self-center">
