@@ -4,6 +4,7 @@ import React from 'react';
 import TicketSection from "./Components/TicketSection";
 function App(){
   return <>
+  <NavBar/>
     <LandingPage/>
     <TicketSection/>
     <Past_Performers/>

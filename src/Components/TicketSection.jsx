@@ -7,7 +7,7 @@ import React from 'react';
 // import Testimonials from './components/Testimonials';
 // import Newsletter from './components/Newsletter';
 // import Footer from './components/Footer';
-import './App.css';
+
 
 
 const TicketSection = () => {
