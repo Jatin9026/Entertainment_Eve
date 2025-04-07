@@ -29,7 +29,7 @@ const Past_Performers = () => {
   ];
 
   return (
-    <div className="bg-[#001711] min-h-screen text-white py-16 px-4">
+    <div className=" min-h-screen text-white py-16 px-4 bg-[#001711]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

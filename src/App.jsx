@@ -3,8 +3,8 @@ import Past_Performers from "./Components/Past_Performers";
 import React from 'react';
 function App(){
   return <>
-  <LandingPage/>
-  <Past_Performers/>
+    <LandingPage/>
+    <Past_Performers/>
   </>
 }
 export default App;
