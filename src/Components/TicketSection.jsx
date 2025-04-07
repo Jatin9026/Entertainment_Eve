@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/buttons.css";
+import StarBorder from './React_bits/StarBorder/StarBorder';
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';
@@ -43,7 +44,7 @@ const TicketSection = () => {
         </div>
       </div>
       
-      {/* Image Section */}
+      {/* Image Section
       <div className="max-w-6xl mx-auto my-12">
         <div className="rounded-lg overflow-hidden">
           <img 
@@ -52,6 +53,19 @@ const TicketSection = () => {
             className="w-full object-cover h-96"
           />
         </div>
+      </div> */}
+
+      {/* Glowing Image Section with StarBorder */}
+      <div className="max-w-6xl mx-auto my-12">
+        <StarBorder as="div" color="#ffffff" speed="5s" className="w-full">
+          <div className="rounded-lg overflow-hidden">
+            <img 
+              src="Ticket.png" 
+              alt="Band performing on stage" 
+              className="w-full object-cover h-96"
+            />
+          </div>
+        </StarBorder>
       </div>
       
       {/* Stats Section */}
