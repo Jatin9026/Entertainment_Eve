@@ -97,7 +97,7 @@ const LandingPage = () => {
                 roadWidth: 10,
                 islandWidth: 2,
                 lanesPerRoad: 4,
-                fov: 150,
+                fov: 160,
                 fovSpeedUp: 90,
                 speedUp: 2,
                 carLightsFade: 0.4,
