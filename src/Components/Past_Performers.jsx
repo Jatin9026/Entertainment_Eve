@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/fonts.css";
+
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -29,7 +30,7 @@ const Past_Performers = () => {
   ];
 
   return (
-    <div className=" min-h-screen text-white py-16 px-4 bg-[#001711]">
+    <div className=" min-h-screen text-white py-16 px-4 bg-[#010f0b]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
