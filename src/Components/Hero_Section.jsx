@@ -5,8 +5,8 @@ import "../styles/fonts.css";
 import "../styles/buttons.css"; // Import your CSS file for custom styles
 import * as motion from "motion/react-client";
 import GradientText from "./React_bits/GradientText/GradientText";
-import TicketSection from "./TicketSection";
-import Past_Performers from "./Past_Performers";
+// const Hyperspeed = React.lazy(()=>import("./React_bits/Hyperspeed/Hyperspeed"))
+
 
 const OverlappingGradientCircles = () => {
   return (
@@ -89,7 +89,7 @@ const LandingPage = () => {
               type="video/mp4"
             />
           </video> */}
-          <div className="relative z-10 w-full h-full">
+          {/*<div className="relative z-10 w-full h-full">
             <Hyperspeed
               effectOptions={{
                 onSpeedUp: () => {},

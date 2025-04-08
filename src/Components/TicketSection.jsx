@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';
@@ -8,6 +8,7 @@ import React from 'react';
 // import Newsletter from './components/Newsletter';
 // import Footer from './components/Footer';
 import { q } from 'motion/react-client';
+// import { useState,useEffect } from 'react';
 
 
 const TicketSection = () => {
