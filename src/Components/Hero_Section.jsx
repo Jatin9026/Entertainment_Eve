@@ -6,11 +6,11 @@ import "../styles/buttons.css"; // Import your CSS file for custom styles
 import * as motion from "motion/react-client";
 import GradientText from "./React_bits/GradientText/GradientText";
 const Hyperspeed = React.lazy(()=>import("./React_bits/Hyperspeed/Hyperspeed"))
-
+ import InfiniteScroll from "./React_bits/InfiniteScroll/InfiniteScroll";
 
 // const OverlappingGradientCircles = () => {
 //   return (
-//     <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
+//     <div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
 //       {/* Back Circle (lower z-index, hover brings it up) */}
 //       <motion.div
 //         initial={{ opacity: 0, scale: 0 }}
@@ -92,7 +92,7 @@ const ImageItems = [
   },
 ];
 
-const ImageScroller = () => {
+const ImageScroller = (e) => {
   return (
     <div style={{ height: '600px', position: 'absolute' }} className="self-end">
       <InfiniteScroll
@@ -104,6 +104,7 @@ const ImageScroller = () => {
         autoplayDirection="up"
         pauseOnHover={true}
       />
+    
     </div>
   );
 };
@@ -255,7 +256,7 @@ const LandingPage = () => {
           {/* <OverlappingGradientCircles /> */}
           <ImageScroller />
 
-          {/*<div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
+          {/*<div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
             {/* Back Circle: Initially lower z-index, but on hover increases *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
             {/* Front Circle *

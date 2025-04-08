@@ -14,7 +14,7 @@ export default function InfiniteScroll({
   // ----- Layout / Style Props -----
   width = "30rem",             // Width of the outer wrapper
   maxHeight = "100%",          // Max-height of the outer wrapper
-  negativeMargin = "-0.5em",   // Negative margin to reduce spacing between items
+  negativeMargin = "-9.5em",   // Negative margin to reduce spacing between items
   // ----- Items Prop -----
   items = [],                  // Array of items with { content: ... }
   itemMinHeight = 150,         // Fixed height for each item
@@ -23,7 +23,7 @@ export default function InfiniteScroll({
   tiltDirection = "left",      // tiltDirection: "left" or "right"
   // ----- Autoplay Props -----
   autoplay = false,            // Whether it should automatically scroll
-  autoplaySpeed = 0.5,          // Speed (pixels/frame approx.)
+  autoplaySpeed = 1.5,          // Speed (pixels/frame approx.)
   autoplayDirection = "down",  // "down" or "up"
   pauseOnHover = false,        // Pause autoplay on hover
 }) {
@@ -162,14 +162,16 @@ export default function InfiniteScroll({
       >
         {items.map((item, i) => (
           <div
-            className="flex items-center justify-center p-4 text-xl font-semibold text-center border-0 border-white rounded-[15px] select-none box-border relative"
+            className="flex items-center justify-center p-4 text-xl font-semibold text-center rounded-[25px] select-none box-border relative boder-3 border-[#00FCB8]"
             key={i}
             style={{
               height: `400px`,
               // width: `400px`,
               marginTop: negativeMargin,
+              
             }}
           >
+            
             {item.content}
           </div>
         ))}
