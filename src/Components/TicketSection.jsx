@@ -122,9 +122,9 @@ const TicketSection = () => {
           </div>
           
           {/* StarBorder as Additional Effect */}
-          <StarBorder as="div" color="#00ffbf" speed="4s" className="absolute inset-0 z-0">
+          {/* <StarBorder as="div" color="#00ffbf" speed="4s" className="absolute inset-0 z-0">
             <div className="w-full h-full"></div>
-          </StarBorder>
+          </StarBorder> */}
         </div>
         
         {/* CSS Animations */}

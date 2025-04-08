@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/fonts.css";
+import * as motion from "motion/react-client"
 
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -57,7 +58,7 @@ const Past_Performers = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full object-cover aspect-[3/4] transform transition duration-300 ease-in-out group-hover:scale-110"
+                  className="w-full object-cover aspect-[3/4] transform transition duration-300 ease-in-out group-hover:scale-110 border-4 border-[#00FCB8] "
                 />
 
                 <div className="absolute inset-3  bg-[#001711] opacity-0 flex flex-col justify-center rounded-lg items-center space-y-4  scale-0 group-hover:opacity-80 group-hover:scale-100 transition-all duration-400 ease-in-out">

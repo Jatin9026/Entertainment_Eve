@@ -219,8 +219,8 @@ export default function Glimpses() {
       </div>
       
       {/* Accent circle with pulse animation */}
-      <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500 animate-ping opacity-30" />
-      <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500" />
+      {/* <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500 animate-ping opacity-30" />
+      <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500" /> */}
       
       {/* Album Text with animated reveal */}
       <div className="text-center mb-8 z-10 overflow-hidden">
