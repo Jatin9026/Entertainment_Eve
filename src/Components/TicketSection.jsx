@@ -1,10 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-=======
-import "../styles/buttons.css";
-import StarBorder from './React_bits/StarBorder/StarBorder';
->>>>>>> 27173aa6e8a82d2d327361d237afa11863007580
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';
