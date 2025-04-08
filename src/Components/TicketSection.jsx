@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../styles/buttons.css";
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';

@@ -8,57 +8,106 @@ import GradientText from "./React_bits/GradientText/GradientText";
 const Hyperspeed = React.lazy(()=>import("./React_bits/Hyperspeed/Hyperspeed"))
 
 
+// const OverlappingGradientCircles = () => {
+//   return (
+//     <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
+//       {/* Back Circle (lower z-index, hover brings it up) */}
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0 }}
+//         animate={{ opacity: 1, scale: 1 }}
+//         transition={{
+//           duration: 0.3,
+//           ease: "easeInOut",
+    //delay: 0.025,
+ // scale: { type: "spring", duration: 0.4 },
+//         }}
+//         className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-500 ease-in-out"
+//       >
+//         <BackgroundGradient className="rounded-full w-100 h-100">
+//           <div
+//             className="w-full h-full rounded-full bg-cover bg-center"
+//             style={{
+//               backgroundImage:
+//                 "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s')",
+//             }}
+//           ></div>
+//         </BackgroundGradient>
+//       </motion.div>
 
-const OverlappingGradientCircles = () => {
-  return (
-    <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
-      {/* Back Circle (lower z-index, hover brings it up) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          //delay: 0.025,
-          // scale: { type: "spring", duration: 0.4 },
-        }}
-        className="rounded-full relative mr-20 z-10 hover:z-30 transition-all duration-500 ease-in-out"
-      >
-        <BackgroundGradient className="rounded-full w-100 h-100">
+//       {/* Front Circle (higher z-index) */}
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0 }}
+//         animate={{ opacity: 1, scale: 1 }}
+//         transition={{
+//           duration: 0.3,
+//           ease: "easeInOut",
+//           // scale: { type: "spring", duration: 0.4 },
+//         }}
+//         className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out"
+//       >
+//         <BackgroundGradient className="rounded-full w-100 h-100">
+//           <div
+//             className="w-full h-full rounded-full bg-cover bg-center"
+//             style={{
+//               backgroundImage:
+//                 "url('https://in.bmscdn.com/events/moviecard/ET00429769.jpg')",
+//             }}
+//           ></div>
+//         </BackgroundGradient>
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+const ImageItems = [
+  {
+    content: (
+      <div className="rounded-3xl relative w-[400px] h-[400px]">
+        {/* <BackgroundGradient className="rounded-3xl w-100 h-100"> */}
           <div
-            className="w-full h-full rounded-full bg-cover bg-center"
+            className="w-100 h-100 rounded-3xl bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s')",
             }}
           ></div>
-        </BackgroundGradient>
-      </motion.div>
-
-      {/* Front Circle (higher z-index) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          // scale: { type: "spring", duration: 0.4 },
-        }}
-        className="rounded-full absolute mt-16 z-20 transition-all duration-300 ease-in-out"
-      >
-        <BackgroundGradient className="rounded-full w-100 h-100">
+        {/* </BackgroundGradient> */}
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="rounded-3xl relative w-[400px] h-[400px]">
+        {/* <BackgroundGradient className="rounded-3xl w-100 h-100"> */}
           <div
-            className="w-full h-full rounded-full bg-cover bg-center"
+            className="w-100 h-100 rounded-3xl bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('https://in.bmscdn.com/events/moviecard/ET00429769.jpg')",
             }}
           ></div>
-        </BackgroundGradient>
-      </motion.div>
+        {/* </BackgroundGradient> */}
+      </div>
+    ),
+  },
+];
+
+const ImageScroller = () => {
+  return (
+    <div style={{ height: '600px', position: 'absolute' }} className="self-end">
+      <InfiniteScroll
+        items={ImageItems}
+        isTilted={false}
+        tiltDirection='left'
+        autoplay={true}
+        autoplaySpeed={2}
+        autoplayDirection="up"
+        pauseOnHover={true}
+      />
     </div>
   );
 };
+
 
 const LandingPage = () => {
   const videoRef = useRef(null);
@@ -71,7 +120,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <>
+  <>
       <div className="fixed top-0 left-0 z-[9999] pointer-events-none"></div>
       <div className="min-h-screen text-white font-sans relative overflow-hidden">
         {/* Video Background */} //
@@ -203,7 +252,8 @@ const LandingPage = () => {
           </div>
 
           {/* Overlapping Circles */}
-          <OverlappingGradientCircles />
+          {/* <OverlappingGradientCircles /> */}
+          <ImageScroller />
 
           {/*<div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
             {/* Back Circle: Initially lower z-index, but on hover increases *
