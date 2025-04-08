@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/fonts.css";
+
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";

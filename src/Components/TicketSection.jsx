@@ -8,6 +8,8 @@ import "../styles/buttons.css";
 // import Testimonials from './components/Testimonials';
 // import Newsletter from './components/Newsletter';
 // import Footer from './components/Footer';
+import { q } from 'motion/react-client';
+// import { useState,useEffect } from 'react';
 
 
 const TicketSection = () => {
@@ -34,7 +36,7 @@ const TicketSection = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               THE SOUNDTRACK TO YOUR MOST <span className="text-teal-400">UNFORGETTABLE</span>
             </h1>
-            <button className="btn-default font-bold py-3 px-6 rounded-full uppercase">
+            <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
               About More
             </button>
           </div>
