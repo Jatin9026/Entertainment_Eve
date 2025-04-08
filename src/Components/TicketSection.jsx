@@ -31,14 +31,10 @@ const TicketSection = () => {
           {/* Right Column - Content */}
           <div className="md:w-1/2 flex flex-col justify-center">
             <p className="mb-6">
-              Mastering financial management is key to your business's success. 
-              Follow these step-by-step processes to ensure your finances are 
-              organized, efficient, and aligned.
+            Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
             </p>
             <p>
-              Mastering financial management is key to your business's success. 
-              Follow these step-by-step processes to ensure your finances are 
-              organized, efficient, and aligned.
+            Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
             </p>
           </div>
         </div>
