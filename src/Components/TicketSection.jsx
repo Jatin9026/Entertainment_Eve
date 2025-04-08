@@ -1,4 +1,5 @@
 import React from 'react';
+
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';
@@ -7,7 +8,7 @@ import React from 'react';
 // import Testimonials from './components/Testimonials';
 // import Newsletter from './components/Newsletter';
 // import Footer from './components/Footer';
-import './App.css';
+import { q } from 'motion/react-client';
 
 
 const TicketSection = () => {
@@ -22,7 +23,7 @@ const TicketSection = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               THE SOUNDTRACK TO YOUR MOST <span className="text-teal-400">UNFORGETTABLE</span>
             </h1>
-            <button className="bg-teal-400 text-black font-bold py-3 px-6 rounded-full uppercase">
+            <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
               About More
             </button>
           </div>
