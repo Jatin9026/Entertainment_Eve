@@ -49,16 +49,33 @@ export default function InfiniteScroll({
     const itemStyle = getComputedStyle(firstItem);
     const itemHeight = firstItem.offsetHeight;
     const itemMarginTop = parseFloat(itemStyle.marginTop) || 0;
-    const totalItemHeight = itemHeight + itemMarginTop;
-    const totalHeight =
-      itemHeight * items.length + itemMarginTop * (items.length - 1);
+    // const totalItemHeight = itemHeight + itemMarginTop;
+    // const totalHeight =
+    //   itemHeight * items.length + itemMarginTop * (items.length - 1);
+      
 
+    // const wrapFn = gsap.utils.wrap(-totalHeight, totalHeight);
+
+    // divItems.forEach((child, i) => {
+    //   const y = i * totalItemHeight;
+    //   gsap.set(child, { y });
+    // });
+
+    // Effective height takes the negative margin into account:
+    const effectiveItemHeight = itemHeight + itemMarginTop;
+    
+    // Compute total effective height for all items
+    const totalHeight = effectiveItemHeight * items.length;
+
+    // Use a wrap range from 0 to totalHeight
     const wrapFn = gsap.utils.wrap(-totalHeight, totalHeight);
 
+    // Set each item's initial position based on effective height
     divItems.forEach((child, i) => {
-      const y = i * totalItemHeight;
+      const y = i * effectiveItemHeight;
       gsap.set(child, { y });
     });
+
 
     const observer = Observer.create({
       target: container,
@@ -166,7 +183,7 @@ export default function InfiniteScroll({
             key={i}
             style={{
               height: `400px`,
-              // width: `400px`,
+              width: `400px`,
               marginTop: negativeMargin,
               
             }}

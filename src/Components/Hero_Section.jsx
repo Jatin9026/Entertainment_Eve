@@ -94,15 +94,16 @@ const ImageItems = [
 
 const ImageScroller = (e) => {
   return (
-    <div style={{ height: '600px', position: 'absolute' }} className="self-end">
+    <div style={{ height: '500px', position: 'absolute' }} className="self-end">
       <InfiniteScroll
         items={ImageItems}
         isTilted={false}
         tiltDirection='left'
         autoplay={true}
-        autoplaySpeed={2}
+        autoplaySpeed={5}
         autoplayDirection="up"
         pauseOnHover={true}
+        negativeMargin="-8em"
       />
     
     </div>
