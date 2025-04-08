@@ -87,7 +87,7 @@ const LandingPage = () => {
               type="video/mp4"
             />
           </video> */}
-          <div className="relative z-10 w-full h-full">
+          {/* <div className="relative z-10 w-full h-full">
             <Hyperspeed
               effectOptions={{
                 onSpeedUp: () => {},
@@ -127,7 +127,7 @@ const LandingPage = () => {
                 }
               }}
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Navigation Bar------> 
