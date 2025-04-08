@@ -13,7 +13,7 @@ import StarBorder from './React_bits/StarBorder/StarBorder';
 
 const TicketSection = () => {
   return (
-    <div className="bg-[#010f0b] text-white py-12 px-6 md:px-16">
+    <div id='ticket' className="bg-[#010f0b] text-white py-12 px-6 md:px-16">
       {/* About Section */}
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8">

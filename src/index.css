@@ -2,6 +2,10 @@
 /* index.css or App.css */
 
 /* Applies to entire site */
+html{
+  scroll-behavior: smooth; /* Smooth scrolling for the entire site */
+}
+
 ::-webkit-scrollbar {
     width: 12px;
   }

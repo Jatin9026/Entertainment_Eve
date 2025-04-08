@@ -5,6 +5,8 @@ import "../styles/fonts.css";
 import "../styles/buttons.css"; // Import your CSS file for custom styles
 import * as motion from "motion/react-client";
 import GradientText from "./React_bits/GradientText/GradientText";
+import TicketSection from "./TicketSection";
+import Past_Performers from "./Past_Performers";
 
 const OverlappingGradientCircles = () => {
   return (
@@ -87,6 +89,7 @@ const LandingPage = () => {
               type="video/mp4"
             />
           </video> */}
+          
           <div className="relative z-10 w-full h-full">
             <Hyperspeed
               effectOptions={{
@@ -190,12 +193,12 @@ const LandingPage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-start gap-4">
-              <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
+              <a href="#past-performers" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
                 Past Performers
-              </button>
-              <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
+              </a>
+              <a href="#ticket" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
                 Tickets
-              </button>
+              </a>
             </div>
           </div>
 
