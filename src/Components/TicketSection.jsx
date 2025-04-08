@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "../styles/buttons.css";
-import StarBorder from './React_bits/StarBorder/StarBorder';
 // import Header from './components/Header';
 // import Hero from './components/Hero';
 // import FeaturedProducts from './components/FeaturedProducts';
@@ -121,10 +120,7 @@ const TicketSection = () => {
             )}
           </div>
           
-          {/* StarBorder as Additional Effect */}
-          <StarBorder as="div" color="#00ffbf" speed="4s" className="absolute inset-0 z-0">
-            <div className="w-full h-full"></div>
-          </StarBorder>
+          
         </div>
         
         {/* CSS Animations */}
