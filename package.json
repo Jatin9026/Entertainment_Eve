@@ -13,7 +13,11 @@
     "@tailwindcss/vite": "^4.1.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
+<<<<<<< HEAD
     "framer-motion": "^12.6.3",
+=======
+    "framer-motion": "^11.18.2",
+>>>>>>> 63d24bc9c85e182f71a43d9db4d25771852bfa41
     "gsap": "^3.12.7",
     "jquery": "^3.7.1",
     "lucide-react": "^0.487.0",

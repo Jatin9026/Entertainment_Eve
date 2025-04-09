@@ -1,27 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import "../styles/buttons.css";
-// import Header from './components/Header';
-// import Hero from './components/Hero';
-// import FeaturedProducts from './components/FeaturedProducts';
-// import AboutSection from './components/AboutSection';
-// import BestSellers from './components/BestSellers';
-// import Testimonials from './components/Testimonials';
-// import Newsletter from './components/Newsletter';
-// import Footer from './components/Footer';
-import { q } from 'motion/react-client';
-// import { useState,useEffect } from 'react';
-
 
 const TicketSection = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [pulseIntensity, setPulseIntensity] = useState(1);
-  
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  const targetDate = new Date("2025-05-03T00:00:00");
+
+  // Calculate time left until the target date
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    const timerInterval = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, [targetDate]);
+
   // Animation effect for continuous pulsing
   useEffect(() => {
     const interval = setInterval(() => {
       setPulseIntensity(prev => (prev === 1 ? 1.2 : 1));
     }, 1500);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -40,21 +55,22 @@ const TicketSection = () => {
               About More
             </button>
           </div>
-          
+
           {/* Right Column - Content */}
           <div className="md:w-1/2 flex flex-col justify-center">
             <p className="mb-6">
-            Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
+              Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
             </p>
             <p>
-            Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
+              Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
             </p>
           </div>
         </div>
       </div>
-      
-      {/* Enhanced Image Section with Highly Dynamic Animated Border */}
+
+      {/* Enhanced Image Section */}
       <div className="max-w-6xl mx-auto my-12">
+        {/* Image Container */}
         <div 
           className="relative p-2 rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105"
           onMouseEnter={() => setIsHovered(true)}
@@ -62,51 +78,13 @@ const TicketSection = () => {
           style={{
             boxShadow: isHovered 
               ? '0 0 25px 5px rgba(0, 200, 148, 0.8), 0 0 40px 8px rgba(0, 255, 191, 0.6)' 
-              : '0 0 15px 2px rgba(0, 200, 148, 0.5)'
+              : '0 0 15px 2px rgba(0, 200,148 , .5)'
           }}
         >
-          {/* Outer Glowing Border */}
-          <div className="absolute inset-0 rounded-xl border-8 border-teal-400"
-            style={{
-              animation: 'borderPulse 3s infinite alternate',
-              boxShadow: 'inset 0 0 20px rgba(0, 255, 191, 0.7)'
-            }}
-          ></div>
-          
-          {/* Animated Gradient Overlay */}
-          <div 
-            className="absolute inset-0 rounded-xl overflow-hidden"
-            style={{
-              background: 'linear-gradient(45deg, rgba(0, 200, 148, 0.3), rgba(0, 255, 191, 0.1), rgba(0, 200, 148, 0.3))',
-              backgroundSize: '400% 400%',
-              animation: 'gradientShift 8s ease infinite'
-            }}
-          ></div>
-          
-          {/* Animated Corner Accents */}
-          <div className="absolute top-0 left-0 w-12 h-12 border-t-8 border-l-8 border-teal-400 rounded-tl-xl"
-            style={{animation: 'cornerPulse 2s infinite alternate'}}></div>
-          <div className="absolute top-0 right-0 w-12 h-12 border-t-8 border-r-8 border-teal-400 rounded-tr-xl"
-            style={{animation: 'cornerPulse 2s infinite alternate', animationDelay: '0.5s'}}></div>
-          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-8 border-l-8 border-teal-400 rounded-bl-xl"
-            style={{animation: 'cornerPulse 2s infinite alternate', animationDelay: '1s'}}></div>
-          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-8 border-r-8 border-teal-400 rounded-br-xl"
-            style={{animation: 'cornerPulse 2s infinite alternate', animationDelay: '1.5s'}}></div>
-          
-          {/* Moving Light Effect */}
-          <div 
-            className="absolute inset-0 opacity-70"
-            style={{
-              background: 'linear-gradient(90deg, transparent, rgba(0, 255, 191, 0.4), transparent)',
-              transform: 'skewX(-20deg) translateX(-100%)',
-              animation: 'lightMove 4s infinite'
-            }}
-          ></div>
-          
-          {/* Image Container with Inner Border */}
+          {/* Image */}
           <div className="relative z-10 rounded-lg overflow-hidden border-4 border-teal-500 m-2">
             <img 
-              src="Ticket.png" 
+              src="Ticket_coming soon.png" 
               alt="Entertainment Eve Event" 
               className="w-full object-cover h-96"
             />
@@ -127,49 +105,25 @@ const TicketSection = () => {
             <div className="w-full h-full"></div>
           </StarBorder> */}
         </div>
-        
-        {/* CSS Animations */}
-        <style jsx>{`
-          @keyframes borderPulse {
-            0% { opacity: 0.8; transform: scale(0.99); }
-            100% { opacity: 1; transform: scale(1.01); }
-          }
-          
-          @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          
-          @keyframes cornerPulse {
-            0% { opacity: 0.7; }
-            100% { opacity: 1; }
-          }
-          
-          @keyframes lightMove {
-            0% { transform: skewX(-20deg) translateX(-100%); }
-            100% { transform: skewX(-20deg) translateX(500%); }
-          }
-        `}</style>
       </div>
-      
-      {/* Stats Section */}
+
+      {/* Countdown Timer Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div className="flex flex-col items-center">
-          <span className="text-5xl md:text-6xl font-bold text-teal-400">10</span>
-          <span className="text-xl">Years Of Experience</span>
+          <span className="text-5xl md:text-6xl font-bold text-teal-400">{timeLeft.days}</span>
+          <span className="text-xl">Days</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl md:text-6xl font-bold text-teal-400">18</span>
-          <span className="text-xl">Skilled Professionals</span>
+          <span className="text-5xl md:text-6xl font-bold text-teal-400">{timeLeft.hours}</span>
+          <span className="text-xl">Hours</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl md:text-6xl font-bold text-teal-400">32</span>
-          <span className="text-xl">Visited Conferences</span>
+          <span className="text-5xl md:text-6xl font-bold text-teal-400">{timeLeft.minutes}</span>
+          <span className="text-xl">Minutes</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-5xl md:text-6xl font-bold text-teal-400">1K</span>
-          <span className="text-xl">Projects Worldwide</span>
+          <span className="text-5xl md:text-6xl font-bold text-teal-400">{timeLeft.seconds}</span>
+          <span className="text-xl">Seconds</span>
         </div>
       </div>
     </div>

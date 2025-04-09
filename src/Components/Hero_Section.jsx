@@ -94,7 +94,7 @@ const ImageItems = [
 
 const ImageScroller = (e) => {
   return (
-    <div style={{ height: '500px', position: 'absolute' }} className="self-end">
+    <div style={{ height: '500px', position: 'absolute' }} className="self-end hidden xl:block">
       <InfiniteScroll
         items={ImageItems}
         isTilted={false}
@@ -222,7 +222,7 @@ const LandingPage = () => {
         </nav> */}
         
         {/* Hero Section */}
-        <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
+        {/* <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
           <div className="max-w-4xl pl-8 sm:pl-16">
             <h3 className="text-4xl mb-2 font-mono">E-Cell Presents</h3>
             <div className="relative">
@@ -251,18 +251,58 @@ const LandingPage = () => {
                 Tickets
               </a>
             </div>
-          </div>
+          </div> */}
+          {/* Hero Section */}
+          <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
+            <div className="max-w-4xl pl-4 sm:pl-16">
+              <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
+              <div className="relative text-left">
+                <GradientText
+                  colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
+                  animationSpeed={3}
+                  showBorder={false}
+                  className="text-5xl md:text-7xl lg:text-8xl custom-font mb-4"
+                >
+                  Entertainment Eve
+                </GradientText>
+              </div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-mono mb-8 text-white">
+                Enjoy the Evening!
+              </h2>
+              <p className="text-lg sm:text-lg md:text-xl mb-12 text-white">
+                Get ready for a night of non-stop fun, laughter, and unforgettable performances! <br />
+                Join us for an electrifying entertainment extravaganza that will leave you wanting more.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-start gap-4 w-full">
+                <a
+                  href="#past-performers"
+                  className="bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+                >
+                  Past Performers
+                </a>
+                <a
+                  href="#ticket"
+                  className="bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+                >
+                  Tickets
+                </a>
+              </div>
+            </div>
+
 
           {/* Overlapping Circles */}
           {/* <OverlappingGradientCircles /> */}
           <ImageScroller />
+          <RollingGallery autoplay={true} pauseOnHover={true}/>
+
 
           {/*<div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
             {/* Back Circle: Initially lower z-index, but on hover increases *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
             {/* Front Circle *
             <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white absolute mt-15 z-20 transition-all duration-300 bg-[url(https://in.bmscdn.com/events/moviecard/ET00429769.jpg)] bg-cover bg-center"></div>
-          </div> */}
+          */}
 
 
           {/* Scroll down indicator */}
