@@ -249,15 +249,19 @@ const LandingPage = () => {
                   showBorder={false}
                   className="text-5xl sm:7xl md:text-8xl lg:text-8xl custom-font mb-4"
                 >
-                  Entertainment Eve
+                  ENTERTAINMENT EVE
                 </GradientText>
               </div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-mono mb-8 text-white">
-                Enjoy the Evening!
+                Where Vibes Meet Velocity!!!
               </h2>
               <p className="text-lg sm:text-lg md:text-xl mb-12 text-white">
-                Get ready for a night of non-stop fun, laughter, and unforgettable performances! <br />
-                Join us for an electrifying entertainment extravaganza that will leave you wanting more.
+              Step into an evening crafted for pure delight —
+              a perfect blend of rhythm, lights, and unforgettable moments.<br />
+              From soulful tunes to feel-good energy, it's more than an event — it's an experience.
+              Let the laughter flow, the music rise, and the memories take center stage.
+
+Because some nights are meant to be remembered
               </p>
 
               <div className="flex flex-col sm:flex-row justify-start gap-4 sm:w-full">
