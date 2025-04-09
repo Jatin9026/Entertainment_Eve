@@ -47,23 +47,21 @@ const TicketSection = () => {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Column - Heading and Button */}
           <div className="md:w-1/2">
-            <p className="text-teal-400 font-medium mb-2">ABOUT US</p>
+            <p className="text-teal-400 font-medium mb-2"></p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              THE SOUNDTRACK TO YOUR MOST <span className="text-teal-400">UNFORGETTABLE</span>
+            The sessions end. The lights dim. <span className="text-teal-400"> One night. Insane energy. And memories that’ll outlive the summit.</span>
             </h1>
-            <button className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
-              About More
-            </button>
+           
           </div>
 
           {/* Right Column - Content */}
           <div className="md:w-1/2 flex flex-col justify-center">
             <p className="mb-6">
-              Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
+            Entertainment Eve isn’t just an event — it’s the heart-thumping, crowd-cheering, stage-blazing climax of Endeavour 2025.
+
+From beats that make you move to moments that leave you screaming — this is where you drop the formals and bring out the wild. No filters, no FOMO — just you, your gang, and the craziest night of the fest. Miss it, and you miss the vibe.
             </p>
-            <p>
-              Entertainment Eve is an exciting event filled with laughter, music, and unforgettable moments. It promises a fun night where everyone can relax, enjoy performances, play games, and celebrate together. A perfect way to unwind and make lasting memories!
-            </p>
+            
           </div>
         </div>
       </div>

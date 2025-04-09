@@ -35,10 +35,10 @@ const Past_Performers = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent font-medium uppercase tracking-wider mb-2">
-            PAST SPEAKERS
+            PAST PERFORMERS
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
-            MEET THE SPEAKERS THAT MAKES
+            MEET THE PERFORMERS THAT MAKE THE
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             EVENT{ " "}
