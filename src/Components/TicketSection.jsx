@@ -72,7 +72,7 @@ const TicketSection = () => {
       <div className="max-w-6xl mx-auto my-12">
         {/* Image Container */}
         <div 
-          className="relative p-2 rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105"
+          className="hidden sm:block relative p-2 rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{
@@ -86,7 +86,7 @@ const TicketSection = () => {
             <img 
               src="Ticket_coming soon.png" 
               alt="Entertainment Eve Event" 
-              className="w-full object-cover h-96"
+              className="w-full object-cover bg-left h-96"
             />
             
             {/* Hover Overlay Effect */}
