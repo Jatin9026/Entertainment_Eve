@@ -106,7 +106,7 @@ const TicketSection = () => {
           {/* Image Container with Inner Border */}
           <div className="relative z-10 rounded-lg overflow-hidden border-4 border-teal-500 m-2">
             <img 
-              src="Ticket.png" 
+              src="Ticket_coming soon.png" 
               alt="Entertainment Eve Event" 
               className="w-full object-cover h-96"
             />

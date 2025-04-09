@@ -35,3 +35,16 @@
 .btn-default:hover:before{
 	width: 100%;
 }
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .btn-default{
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-default{
+    width: 220px;
+  }
+}
