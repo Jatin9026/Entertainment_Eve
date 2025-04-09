@@ -54,7 +54,7 @@ const Past_Performers = () => {
             PAST Performers
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
-            MEET THE SPEAKERS THAT MAKES
+            MEET THE PERFORMERS THAT MAKE THE
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             EVENT{" "}
