@@ -239,8 +239,8 @@ const LandingPage = () => {
           </div> */}
 
           {/* Hero Section */}
-          <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
-            <div className="max-w-4xl pl-4 sm:pl-16">
+          <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10 mt-10 sm:mt-8">
+            <div className="max-w-4xl px-2 sm:pl-16">
               <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
               <div className="relative text-left">
                 <GradientText
@@ -252,16 +252,15 @@ const LandingPage = () => {
                   ENTERTAINMENT EVE
                 </GradientText>
               </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-mono mb-8 text-white">
+              <h2 className="text-4xl sm:text-5xl md:text-5xl font-mono mb-8 text-white">
                 Where Vibes Meet Velocity!!!
               </h2>
-              <p className="text-lg sm:text-lg md:text-xl mb-12 text-white">
-              Step into an evening crafted for pure delight —
-              a perfect blend of rhythm, lights, and unforgettable moments.<br />
-              From soulful tunes to feel-good energy, it's more than an event — it's an experience.
-              Let the laughter flow, the music rise, and the memories take center stage.
-
-Because some nights are meant to be remembered
+              <p className="text-lg sm:text-lg md:text-xl mb-8 text-white">
+                Step into an evening crafted for pure delight —
+                a perfect blend of rhythm, lights, and unforgettable moments.<br />
+                From soulful tunes to feel-good energy, it's more than an event — it's an experience.
+                Let the laughter flow, the music rise, and the memories take center stage.
+                Because some nights are meant to be remembered
               </p>
 
               <div className="flex flex-col sm:flex-row justify-start gap-4 sm:w-full">
