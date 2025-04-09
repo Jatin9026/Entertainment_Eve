@@ -207,81 +207,50 @@ const LandingPage = () => {
         </div>
 
         {/* Hero Section */}
-        {/* <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
-          <div className="max-w-4xl pl-8 sm:pl-16">
-            <h3 className="text-4xl mb-2 font-mono">E-Cell Presents</h3>
-            <div className="relative">
+        <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10 mt-10 sm:mt-8">
+          <div className="max-w-4xl px-2 sm:pl-16">
+            <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
+            <div className="relative text-left">
               <GradientText
                 colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
                 animationSpeed={3}
                 showBorder={false}
-                className="text-7xl md:text-8xl custom-font mb-4"
+                className="text-5xl sm:7xl md:text-8xl lg:text-8xl custom-font mb-4"
               >
-                Entertainment Eve
+                ENTERTAINMENT EVE
               </GradientText>
             </div>
-            <h2 className="text-6xl md:text-7xl font-mono mb-8 text-white">
-              Enjoy the Evening!
+            <h2 className="text-4xl sm:text-5xl md:text-5xl font-mono mb-8 text-white">
+              Where Vibes Meet Velocity!!!
             </h2>
-            <p className="text-xl mb-12">
-            Get ready for a night of non-stop fun, laughter, and unforgettable performances! <br></br>
-            Join us for an electrifying entertainment extravaganza that will leave you wanting more.
+            <p className="text-lg sm:text-lg md:text-xl mb-8 text-white">
+              Step into an evening crafted for pure delight —
+              a perfect blend of rhythm, lights, and unforgettable moments.<br />
+              From soulful tunes to feel-good energy, it's more than an event — it's an experience.
+              Let the laughter flow, the music rise, and the memories take center stage.
+              Because some nights are meant to be remembered
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-start gap-4">
-              <a href="#past-performers" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
+            <div className="flex flex-col sm:flex-row justify-start gap-4 sm:w-full">
+              <a
+                href="#past-performers"
+                className="w-[220px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+              >
                 Past Performers
               </a>
-              <a href="#ticket" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
+              <a
+                href="#ticket"
+                className="w-[130px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+              >
                 Tickets
               </a>
             </div>
-          </div> */}
-
-          {/* Hero Section */}
-          <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10 mt-10 sm:mt-8">
-            <div className="max-w-4xl px-2 sm:pl-16">
-              <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
-              <div className="relative text-left">
-                <GradientText
-                  colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
-                  animationSpeed={3}
-                  showBorder={false}
-                  className="text-5xl sm:7xl md:text-8xl lg:text-8xl custom-font mb-4"
-                >
-                  ENTERTAINMENT EVE
-                </GradientText>
-              </div>
-              <h2 className="text-4xl sm:text-5xl md:text-5xl font-mono mb-8 text-white">
-                Where Vibes Meet Velocity!!!
-              </h2>
-              <p className="text-lg sm:text-lg md:text-xl mb-8 text-white">
-                Step into an evening crafted for pure delight —
-                a perfect blend of rhythm, lights, and unforgettable moments.<br />
-                From soulful tunes to feel-good energy, it's more than an event — it's an experience.
-                Let the laughter flow, the music rise, and the memories take center stage.
-                Because some nights are meant to be remembered
-              </p>
-
-              <div className="flex flex-col sm:flex-row justify-start gap-4 sm:w-full">
-                <a
-                  href="#past-performers"
-                  className="w-[220px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
-                >
-                  Past Performers
-                </a>
-                <a
-                  href="#ticket"
-                  className="w-[130px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
-                >
-                  Tickets
-                </a>
-              </div>
-            </div>
+          </div>
 
 
           {/* Overlapping Circles */}
           {/* <OverlappingGradientCircles /> */}
+
           <ImageScroller />
 
           <RollingGallery 
