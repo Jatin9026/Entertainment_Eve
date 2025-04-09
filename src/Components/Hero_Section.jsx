@@ -6,8 +6,8 @@ import "../styles/buttons.css"; // Import your CSS file for custom styles
 import * as motion from "motion/react-client";
 import GradientText from "./React_bits/GradientText/GradientText";
 const Hyperspeed = React.lazy(()=>import("./React_bits/Hyperspeed/Hyperspeed"))
- import InfiniteScroll from "./React_bits/InfiniteScroll/InfiniteScroll";
-
+import InfiniteScroll from "./React_bits/InfiniteScroll/InfiniteScroll";
+import RollingGallery from "./React_bits/RollingGallery/RollingGallery"
 // const OverlappingGradientCircles = () => {
 //   return (
 //     <div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">

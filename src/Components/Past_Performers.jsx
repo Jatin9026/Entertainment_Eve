@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/fonts.css";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -9,40 +9,55 @@ import { FaLinkedin } from "react-icons/fa";
 const Past_Performers = () => {
   const teamMembers = [
     {
-      name: "Abishek Singh",
-      role: "IAS officer & Actor",
-      image: "https://e-cell.in/assets/abhishek_singh-dHHqkBwz.jpeg",
+      name: "Aaditya Kulshreshth",
+      role: "Stand-Up Comedian & Storyteller",
+      image: "Kullu.jpg",
+      description:"Aaditya Kulshreshth, aka Kullu, is a rising star in Indian stand-up comedy.",
+      insta:"http://instagram.com/kullubaaazi/?hl=en",
+      facebook:"facebook.com/adibhai14/",
     },
     {
-      name: "Sachin Saxsena",
-      role: "Marketing Head @ Innovaccer",
-      image: "https://e-cell.in/assets/sachin-eUMV4rm1.jpeg",
+      name: "Shivam Ahuja",
+      role: "Soulful Singer | Live Performer",
+      image: "Shivam_Ahuja.png",
+      description:"Shivam Ahuja is a soulful singer whose voice brings every lyric to life",
+      insta:"https://www.instagram.com/shivamahuja_music/",
+      facebook:"https://www.facebook.com/shivam.ahuja.397501/",
     },
     {
-      name: "Himanshi Singh",
-      role: "Owner Emporio Marketing Pvt. Ltd.",
-      image: "https://e-cell.in/assets/himanshi_singh-C16Pdx2w.jpeg",
+      name: "Yash Rathi",
+      role: "Poet | Performer | Voice of the Youth",
+      image: "Yash.jpg",
+      description:"Yash Rathi is a poet and youth icon known for his charged performances and poetry",
+      insta:"https://www.instagram.com/yashrathi.r/?hl=en",
+      facebook:"https://www.facebook.com/yashrathicomedy/",
     },
     {
-      name: "Aditi Ohri",
-      role: "TedX Speaker & YouTuber",
-      image: "https://e-cell.in/assets/aditi-4W-jwL15.jpg",
+      name: "Samaakshi Jha",
+      role: " Poet | Performer | Voice with Grace",
+      image: "itti_chokhaaaa.jpg",
+      description:"Samaakshi Jha is a poet and performer whose words reflect inner strength and emotions.",
+      insta:"https://www.instagram.com/littiii_chokha/?hl=en",
+      facebook:"https://www.facebook.com/p/Samaakshi-Jha-100011596448688/",
     },
   ];
 
   return (
-    <div id="past-performers" className=" min-h-screen text-white py-16 px-4 bg-[#010f0b]">
+    <div
+      id="past-performers"
+      className=" min-h-screen text-white py-16 px-4 bg-[#010f0b]"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent font-medium uppercase tracking-wider mb-2">
-            PAST SPEAKERS
+            PAST Performers
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
             MEET THE SPEAKERS THAT MAKES
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            EVENT{ " "}
+            EVENT{" "}
             <span className="bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
               UNSTOPPABLE
             </span>
@@ -62,25 +77,32 @@ const Past_Performers = () => {
                 />
 
                 <div className="absolute inset-3  bg-[#001711] opacity-0 flex flex-col justify-center rounded-lg items-center space-y-4  scale-0 group-hover:opacity-80 group-hover:scale-100 transition-all duration-400 ease-in-out">
+                  <div className="absolute bottom-1 left-3 right-3 text-white opacity-10 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
+                    <p className="text-green-400 font-semibold">
+                      {member.role}
+                    </p>
+                    <p className="text-sm">
+                      {member.description}
+                    </p>
+                  </div>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href={member.insta}
                       className="bg-[#00FCB8] text-black p-3 rounded-full hover:scale-130 "
                     >
-                      <i className=""><FaInstagramSquare/></i>
+                      <i className="">
+                        <FaInstagramSquare />
+                      </i>
                     </a>
                     <a
-                      href="#"
+                      href={member.facebook}
                       className="bg-[#00FCB8] text-black p-3 rounded-full hover:scale-130 transition "
                     >
-                      <i><FaFacebook/></i>
+                      <i>
+                        <FaFacebook />
+                      </i>
                     </a>
-                    <a
-                      href="#"
-                      className="bg-[#00FCB8] text-black p-3 rounded-full hover:scale-130 transition"
-                    >
-                      <i className=""><FaLinkedin/></i>
-                    </a>
+                   
                   </div>
                 </div>
               </div>
