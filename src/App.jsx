@@ -4,13 +4,13 @@ import React from 'react';
 import TicketSection from "./Components/TicketSection";
 import Glimpses from "./Components/Glimpses";
 // import Header from "./Components/NavBar";
+// import Header from "./Components/NavBar";
 function App(){
   return <>
     <LandingPage/>
     <TicketSection/>
     <Past_Performers/>
     <Glimpses/>
-    
   </>
 }
 export default App;
