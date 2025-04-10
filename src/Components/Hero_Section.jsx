@@ -146,8 +146,10 @@ const LandingPage = () => {
   return (
   <>
       <div className="fixed top-0 left-0 z-[9999] pointer-events-none"></div>
-      <div className="min-h-screen text-white font-sans relative bg-[#010f0d] overflow-hidden">
+      
+      <div className="min-h-screen text-white font-sans relative bg-gradient-to-b from-black via-[#001a1a] to-black overflow-hidden">
         {/* Video Background */} 
+        
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 z-10"></div>
           {/* <video
@@ -253,13 +255,18 @@ const LandingPage = () => {
 
           <ImageScroller />
 
-
-          {/*<div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
-            {/* Back Circle: Initially lower z-index, but on hover increases *
-            <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white relative mr-20 z-10 hover:z-30 transition-all duration-300 bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s)] bg-cover bg-center"></div>
-            {/* Front Circle *
-            <div className="w-100 h-100 bg-[#00fcb8] rounded-full border-white absolute mt-15 z-20 transition-all duration-300 bg-[url(https://in.bmscdn.com/events/moviecard/ET00429769.jpg)] bg-cover bg-center"></div>
-          */}
+          <RollingGallery 
+            autoplay={true} 
+            pauseOnHover={true}
+            autoplayDuration={10}
+            images={
+              [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s",
+                "https://in.bmscdn.com/events/moviecard/ET00429769.jpg",
+                "https://in.bmscdn.com/events/moviecard/ET00440583.jpg",
+              ]
+            }
+          />
 
 
           {/* Scroll down indicator */}

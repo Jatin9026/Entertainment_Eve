@@ -5,6 +5,7 @@ import Glimpses from "./Components/Glimpses";
 
 function App(){
   return <>
+  
     <LandingPage/>
     <TicketSection/>
     <Past_Performers/>

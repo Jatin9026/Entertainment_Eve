@@ -43,14 +43,17 @@ const Past_Performers = () => {
   ];
 
   return (
+    <>
+
     <div
       id="past-performers"
-      className=" min-h-screen text-white py-16 px-4 bg-[#010f0b]"
+      className=" min-h-screen text-white py-16 px-4 bg-gradient-to-b from-black via-[#001a1a] to-black"
     >
+      
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent font-medium uppercase tracking-wider mb-2">
+          <p className="bg-clip-text text-transparent font-medium uppercase tracking-wider mb-2">
             PAST Performers
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
@@ -58,7 +61,7 @@ const Past_Performers = () => {
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             EVENT{" "}
-            <span className="bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
+            <span className=" bg-clip-text text-transparent custom-font">
               UNSTOPPABLE
             </span>
           </h2>
@@ -115,6 +118,7 @@ const Past_Performers = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

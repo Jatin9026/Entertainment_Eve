@@ -41,8 +41,13 @@ const TicketSection = () => {
   }, []);
 
   return (
-    <div id='ticket' className="bg-[#010f0b] text-white py-12 px-6 md:px-16">
+    <div id='ticket' className="bg-gradient-to-b from-black via-[#001a1a] to-black text-white py-12 px-6 md:px-16">
       {/* About Section */}
+      <div className="absolute top-0 left-0 w-full h-full border-t border-l border-teal-500/5 grid grid-cols-4 grid-rows-4">
+          {[...Array(16)].map((_, i) => (
+            <div key={i} className="border-b border-r border-teal-500/5" />
+          ))}
+        </div>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Column - Heading and Button */}

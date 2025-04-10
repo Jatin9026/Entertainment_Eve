@@ -25,8 +25,10 @@ export default function Glimpses() {
   }, [images.length]);
 
   return (
-    <div className="bg-[#010f0d] w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="bg-gradient-to-b from-black via-[#001a1a] to-black w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       
+      
+
       {/* Background Audio Wave Decorations - Enhanced Animation */}
       <div className="absolute left-0 right-0 bottom-0 top-0 flex items-center pointer-events-none z-0">
         <svg className="w-full h-full" viewBox="0 0 1200 600">
