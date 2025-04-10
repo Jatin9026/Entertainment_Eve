@@ -56,10 +56,10 @@ const TicketSection = () => {
 
           {/* Right Column - Content */}
           <div className="md:w-1/2 flex flex-col justify-center">
-            <p className="mb-6">
-            Entertainment Eve isn’t just an event — it’s the heart-thumping, crowd-cheering, stage-blazing climax of Endeavour 2025.
-
-From beats that make you move to moments that leave you screaming — this is where you drop the formals and bring out the wild. No filters, no FOMO — just you, your gang, and the craziest night of the fest. Miss it, and you miss the vibe.
+            <p className="sm:text-xl mb-6">
+              Entertainment Eve isn’t just an event — it’s the heart-thumping, crowd-cheering, stage-blazing climax of Endeavour 2025.
+              From beats that make you move to moments that leave you screaming — this is where you drop the formals and bring out the wild. 
+              No filters, no FOMO — just you, your gang, and the craziest night of the fest. Miss it, and you miss the vibe.
             </p>
             
           </div>
@@ -70,7 +70,7 @@ From beats that make you move to moments that leave you screaming — this is wh
       <div className="max-w-6xl mx-auto my-12">
         {/* Image Container */}
         <div 
-          className="relative p-2 rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105"
+          className="hidden sm:block relative p-2 rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{
@@ -84,7 +84,7 @@ From beats that make you move to moments that leave you screaming — this is wh
             <img 
               src="Ticket_coming soon.png" 
               alt="Entertainment Eve Event" 
-              className="w-full object-cover h-96"
+              className="w-full object-cover bg-left h-96"
             />
             
             {/* Hover Overlay Effect */}

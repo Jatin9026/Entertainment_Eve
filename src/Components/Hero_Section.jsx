@@ -62,33 +62,55 @@ import RollingGallery from "./React_bits/RollingGallery/RollingGallery"
 const ImageItems = [
   {
     content: (
-      <div className="rounded-3xl relative w-[400px] h-[400px]">
-        {/* <BackgroundGradient className="rounded-3xl w-100 h-100"> */}
-          <div
-            className="w-100 h-100 rounded-3xl bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s')",
-            }}
-          ></div>
-        {/* </BackgroundGradient> */}
-      </div>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYAvU-FHuhHUcwwqXcg4wRvA4GV_XkIvI9g&s"
+        alt="COMING SOON"
+        className="w-100 h-100 rounded-3xl object-cover transition-transform duration-300 ease-out hover:scale-105 p-0.5 bg-cover bg-center
+                  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+      />
+      // <span className="text-6xl bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
+      //   COMING SOON
+      // </span>
     ),
   },
   {
     content: (
-      <div className="rounded-3xl relative w-[400px] h-[400px]">
-        {/* <BackgroundGradient className="rounded-3xl w-100 h-100"> */}
-          <div
-            className="w-100 h-100 rounded-3xl bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://in.bmscdn.com/events/moviecard/ET00429769.jpg')",
-            }}
-          ></div>
-        {/* </BackgroundGradient> */}
-      </div>
+      <img
+        src="https://in.bmscdn.com/events/moviecard/ET00429769.jpg"
+        alt="COMING SOON"
+        className="w-100 h-100 rounded-3xl object-cover transition-transform duration-300 ease-out hover:scale-105 p-0.5 bg-cover bg-center
+                  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+      />
+    //   <span className="text-6xl bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
+    //   COMING SOON
+    // </span>
     ),
+  },
+  {
+    content: (
+      <img
+        src="https://in.bmscdn.com/events/moviecard/ET00440583.jpg"
+        alt="COMING SOON"
+        className="w-100 h-100 rounded-3xl object-cover transition-transform duration-300 ease-out hover:scale-105 p-0.5 bg-cover bg-center
+                  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+      />
+      // <span className="text-6xl bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
+      //   COMING SOON
+      // </span>
+    ),
+  },
+  {
+    content: (
+      // <img
+      //   src=""
+      //   alt="COMING SOON"
+      //   className="w-100 h-100 rounded-3xl object-cover transition-transform duration-300 ease-out hover:scale-105 p-0.5 bg-cover bg-center
+      //             bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+      // />
+      <span className="text-6xl bg-gradient-to-r from-[#00FCB8] via-[#00c2a8] to-[#4eedd8] bg-clip-text text-transparent custom-font">
+        COMING SOON
+      </span>
+    )
   },
 ];
 
@@ -124,10 +146,10 @@ const LandingPage = () => {
   return (
   <>
       <div className="fixed top-0 left-0 z-[9999] pointer-events-none"></div>
-      <div className="min-h-screen text-white font-sans relative overflow-hidden">
-        {/* Video Background */} //
+      <div className="min-h-screen text-white font-sans relative bg-[#010f0d] overflow-hidden">
+        {/* Video Background */} 
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#010f0b] z-10"></div>
+          <div className="absolute inset-0 z-10"></div>
           {/* <video
             ref={videoRef}
             className="absolute min-w-full min-h-full object-cover"
@@ -184,121 +206,52 @@ const LandingPage = () => {
           </div>
         </div>
 
-        {/* Navigation Bar------> 
-        <nav className="flex items-center justify-between px-6 py-4 bg-transparent relative z-20 border-b border-white-800">
-          <div className="w-50 h-16 overflow-hidden">
-            <span className="block w-full h-full transition-transform duration-300 scale-300">
-              <img
-                className=" w-full h-full object-contain"
-                src="Images/image.png"
-                alt="Logo"
-              />
-            </span>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              HOME
-            </a>
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              Past Perfomers
-            </a>
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              SERVICES
-            </a>
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              Glimpses
-            </a>
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              Tickets
-            </a>
-            <a href="#" className="hover:text-[#00FCB8] font-medium">
-              CONTACT US
-            </a>
-          </div>
-          <button className="text-white-500 font-bold py-2 px-6 hover:transition-all duration-400 ease-in-out hover:bg-[#00FCB8] rounded-full">
-            BOOK NOW
-          </button>
-        </nav> */}
-        
         {/* Hero Section */}
-        {/* <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
-          <div className="max-w-4xl pl-8 sm:pl-16">
-            <h3 className="text-4xl mb-2 font-mono">E-Cell Presents</h3>
-            <div className="relative">
+        <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10 mt-10 sm:mt-8">
+          <div className="max-w-4xl px-2 sm:pl-16">
+            <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
+            <div className="relative text-left">
               <GradientText
                 colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
                 animationSpeed={3}
                 showBorder={false}
-                className="text-7xl md:text-8xl custom-font mb-4"
+                className="text-5xl sm:7xl md:text-8xl lg:text-8xl custom-font mb-4"
               >
-                Entertainment Eve
+                ENTERTAINMENT EVE
               </GradientText>
             </div>
-            <h2 className="text-6xl md:text-7xl font-mono mb-8 text-white">
-              Enjoy the Evening!
+            <h2 className="text-4xl sm:text-5xl md:text-5xl font-mono mb-8 text-white">
+              Where Vibes Meet Velocity!!!
             </h2>
-            <p className="text-xl mb-12">
-            Get ready for a night of non-stop fun, laughter, and unforgettable performances! <br></br>
-            Join us for an electrifying entertainment extravaganza that will leave you wanting more.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-start gap-4">
-              <a href="#past-performers" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
-                Past Performers
-              </a>
-              <a href="#ticket" className="bg-transparent text-white-500 font-bold py-3 px-8 rounded-full btn-default">
-                Tickets
-              </a>
-            </div>
-          </div> */}
-          {/* Hero Section */}
-          <div className="flex flex-col items-start justify-center h-screen px-4 relative z-10">
-            <div className="max-w-4xl pl-4 sm:pl-16">
-              <h3 className="text-3xl sm:text-4xl mb-2 font-mono">E-Cell Presents</h3>
-              <div className="relative text-left">
-                <GradientText
-                  colors={["#00FCB8", "#00c2a8", "#099499", "#00FCB8"]}
-                  animationSpeed={3}
-                  showBorder={false}
-                  className="text-5xl md:text-7xl lg:text-8xl custom-font mb-4"
-                >
-                  ENTERTAINMENT EVE
-                </GradientText>
-              </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-mono mb-8 text-white">
-                Where Vibes Meet Velocity!!!
-              </h2>
-              <p className="text-lg sm:text-lg md:text-xl mb-12 text-white">
+            <p className="text-lg sm:text-lg md:text-xl mb-8 text-white">
               Step into an evening crafted for pure delight —
               a perfect blend of rhythm, lights, and unforgettable moments.<br />
               From soulful tunes to feel-good energy, it's more than an event — it's an experience.
               Let the laughter flow, the music rise, and the memories take center stage.
+              Because some nights are meant to be remembered
+            </p>
 
-Because some nights are meant to be remembered
-              </p>
-
-              <div className="flex flex-col sm:flex-row justify-start gap-4 w-full">
-                <a
-                  href="#past-performers"
-                  className="bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
-                >
-                  Past Performers
-                </a>
-                <a
-                  href="#ticket"
-                  className="bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
-                >
-                  Tickets
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row justify-start gap-4 sm:w-full">
+              <a
+                href="#past-performers"
+                className="w-[220px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+              >
+                Past Performers
+              </a>
+              <a
+                href="#ticket"
+                className="w-[130px] bg-transparent text-white font-bold py-3 px-8 rounded-full btn-default text-left"
+              >
+                Tickets
+              </a>
             </div>
+          </div>
 
 
           {/* Overlapping Circles */}
           {/* <OverlappingGradientCircles /> */}
+
           <ImageScroller />
-          <RollingGallery autoplay={true} pauseOnHover={true}/>
 
 
           {/*<div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end space-y-[-20px] mr-10">
