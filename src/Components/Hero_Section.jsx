@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from "react";
-// import Hyperspeed from "./React_bits/Hyperspeed/Hyperspeed";
 import { BackgroundGradient } from "./ui/Background_Gradient";
+import * as motion from "motion/react-client";
 import "../styles/fonts.css";
 import "../styles/buttons.css"; // Import your CSS file for custom styles
-import * as motion from "motion/react-client";
-import GradientText from "./React_bits/GradientText/GradientText";
 const Hyperspeed = React.lazy(()=>import("./React_bits/Hyperspeed/Hyperspeed"))
+import GradientText from "./React_bits/GradientText/GradientText";
 import InfiniteScroll from "./React_bits/InfiniteScroll/InfiniteScroll";
 import RollingGallery from "./React_bits/RollingGallery/RollingGallery"
+
+
 // const OverlappingGradientCircles = () => {
 //   return (
 //     <div className="absolute right-8 to/2 transform -translate-y-1/2 flex flex-col items-end mr-10 space-y-[-20px]">
@@ -148,8 +149,8 @@ const LandingPage = () => {
       <div className="fixed top-0 left-0 z-[9999] pointer-events-none"></div>
       
       <div className="min-h-screen text-white font-sans relative bg-gradient-to-b from-black via-[#001a1a] to-black overflow-hidden">
-        {/* Video Background */} 
         
+        {/* Video Background */} 
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 z-10"></div>
           {/* <video

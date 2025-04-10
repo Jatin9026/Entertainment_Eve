@@ -49,7 +49,6 @@ const Past_Performers = () => {
       id="past-performers"
       className=" min-h-screen text-white py-16 px-4 bg-gradient-to-b from-black via-[#001a1a] to-black"
     >
-      
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
