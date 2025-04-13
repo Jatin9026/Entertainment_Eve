@@ -1,13 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Glimpses() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [waveOffset, setWaveOffset] = useState(0);
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-  const marqueeRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
 
   // Images for the marquee (using placeholders)
   const images = [
@@ -21,150 +16,54 @@ export default function Glimpses() {
     "glimp8.jpg"
   ];
 
-  // Total width calculation for the marquee
-  const totalWidth = images.length * 400; // Adjusted for 400px image width
-
   // Animate the marquee and waves
   useEffect(() => {
-    let animationFrame;
-    
-    if (isAutoScrolling) {
-      animationFrame = requestAnimationFrame(function animate() {
-        setScrollPosition(prev => (prev + 1.5) % totalWidth); // Increased speed from 0.5 to 1.5
-        setWaveOffset(prev => (prev + 0.2) % 1000);
-        animationFrame = requestAnimationFrame(animate);
-      });
-    } else {
-      // Still animate waves when auto-scroll is off
-      animationFrame = requestAnimationFrame(function animate() {
-        setWaveOffset(prev => (prev + 0.2) % 1000);
-        animationFrame = requestAnimationFrame(animate);
-      });
-    }
+    const animationFrame = requestAnimationFrame(function animate() {
+      setScrollPosition(prev => (prev + 0.5) % (images.length * 200)); // Adjusted for mobile
+      setWaveOffset(prev => (prev + 0.2) % 1000);
+      requestAnimationFrame(animate);
+    });
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [isAutoScrolling, totalWidth]);
-
-  // Mouse and touch event handlers for manual scrolling
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - marqueeRef.current.offsetLeft);
-    setScrollLeft(scrollPosition);
-    setIsAutoScrolling(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - marqueeRef.current.offsetLeft;
-    const walk = (startX - x) * 2; // Multiplier for faster scrolling
-    let newPosition = scrollLeft + walk;
-    
-    // Ensure looping behavior
-    if (newPosition < 0) newPosition = totalWidth + newPosition;
-    if (newPosition > totalWidth) newPosition = newPosition % totalWidth;
-    
-    setScrollPosition(newPosition);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - marqueeRef.current.offsetLeft);
-    setScrollLeft(scrollPosition);
-    setIsAutoScrolling(false);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - marqueeRef.current.offsetLeft;
-    const walk = (startX - x) * 2;
-    let newPosition = scrollLeft + walk;
-    
-    // Ensure looping behavior
-    if (newPosition < 0) newPosition = totalWidth + newPosition;
-    if (newPosition > totalWidth) newPosition = newPosition % totalWidth;
-    
-    setScrollPosition(newPosition);
-  };
-
-  const toggleAutoScroll = () => {
-    setIsAutoScrolling(!isAutoScrolling);
-  };
+  }, [images.length]);
 
   return (
-    <div className="bg-gradient-to-b from-black via-[#001a1a] to-black w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      
-      {/* Background Audio Wave Decorations - Enhanced Animation */}
+    <div className="bg-gradient-to-b from-black via-[#001a1a] to-black w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-8">
+      {/* Background Audio Wave Decorations - Mobile Optimized */}
       <div className="absolute left-0 right-0 bottom-0 top-0 flex items-center pointer-events-none z-0">
-        <svg className="w-full h-full" viewBox="0 0 1200 600">
-          {/* First set of waves - bottom layer */}
+        <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
+          {/* Simplified waves for mobile */}
           <path 
             d={`M0,300 Q150,${280 + Math.sin(waveOffset * 0.01) * 30} 300,300 T600,${290 + Math.cos(waveOffset * 0.008) * 20} T900,${310 + Math.sin(waveOffset * 0.012) * 25} T1200,300`}
             fill="none" 
             stroke="rgb(20, 184, 166)" 
-            strokeWidth="2"
-            className="opacity-20"
+            strokeWidth="1"
+            className="opacity-15 md:opacity-20"
           />
           <path 
             d={`M0,350 Q150,${380 + Math.cos(waveOffset * 0.015) * 25} 300,350 T600,${330 + Math.sin(waveOffset * 0.01) * 30} T900,${370 + Math.cos(waveOffset * 0.009) * 20} T1200,350`}
             fill="none" 
             stroke="rgb(20, 184, 166)" 
-            strokeWidth="2"
-            className="opacity-20"
+            strokeWidth="1"
+            className="opacity-15 md:opacity-20"
           />
           
-          {/* Second set of waves - middle layer */}
-          <path 
-            d={`M0,250 Q200,${210 + Math.sin(waveOffset * 0.02) * 25} 400,250 T800,${260 + Math.cos(waveOffset * 0.018) * 20} T1200,250`}
-            fill="none" 
-            stroke="rgb(20, 184, 166)" 
-            strokeWidth="3"
-            className="opacity-25"
-          />
-          <path 
-            d={`M0,400 Q200,${440 + Math.cos(waveOffset * 0.017) * 30} 400,400 T800,${380 + Math.sin(waveOffset * 0.022) * 25} T1200,400`}
-            fill="none" 
-            stroke="rgb(20, 184, 166)" 
-            strokeWidth="3"
-            className="opacity-25"
-          />
-          
-          {/* Third set of waves - top layer with more movement */}
-          <path 
-            d={`M0,200 Q100,${170 + Math.sin(waveOffset * 0.03) * 40} 200,200 T400,${210 + Math.cos(waveOffset * 0.025) * 30} T600,${190 + Math.sin(waveOffset * 0.035) * 35} T800,${205 + Math.cos(waveOffset * 0.028) * 25} T1000,${195 + Math.sin(waveOffset * 0.032) * 30} T1200,200`}
-            fill="none" 
-            stroke="rgb(20, 184, 166)" 
-            strokeWidth="2"
-            className="opacity-30"
-          />
-          <path 
-            d={`M0,450 Q100,${480 + Math.cos(waveOffset * 0.033) * 35} 200,450 T400,${430 + Math.sin(waveOffset * 0.027) * 40} T600,${470 + Math.cos(waveOffset * 0.031) * 30} T800,${440 + Math.sin(waveOffset * 0.029) * 35} T1000,${460 + Math.cos(waveOffset * 0.034) * 25} T1200,450`}
-            fill="none" 
-            stroke="rgb(20, 184, 166)" 
-            strokeWidth="2"
-            className="opacity-30"
-          />
-          
-          {/* Floating particles/dots - only on the right side */}
-          {Array.from({ length: 10 }).map((_, i) => (
+          {/* Floating particles/dots - reduced for mobile */}
+          {Array.from({ length: 5 }).map((_, i) => (
             <circle
               key={i}
               cx={600 + ((waveOffset * (0.05 + i * 0.01)) % 600)}
               cy={200 + Math.sin(waveOffset * (0.02 + i * 0.005)) * 200}
-              r={1 + (i % 3)}
+              r={0.5 + (i % 2)}
               fill="rgb(20, 184, 166)"
-              className="opacity-50"
+              className="opacity-30 md:opacity-50"
             />
           ))}
         </svg>
       </div>
       
-      {/* New Creative Heading */}
-      <div className="text-center mb-12 z-10">
+{/* New Creative Heading */}
+<div className="text-center mb-12 z-10">
         <div className="relative overflow-hidden py-3">
           <h2 className="text-teal-300 text-lg uppercase tracking-widest font-light mb-3 animate-pulse">
             Time Fragments
@@ -191,29 +90,23 @@ export default function Glimpses() {
           </div>
         </div>
       </div>
-      
-      {/* Album Artwork with Marquee - Images Only */}
-      <div className="relative w-full max-w-6xl mb-6 z-10">
-        <div 
-          ref={marqueeRef}
-          className="aspect-video relative rounded-lg overflow-hidden shadow-lg shadow-teal-900/20"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleMouseUp}
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-        >
+
+      {/* Album Artwork with Marquee - Mobile Optimized */}
+      <div className="relative w-full max-w-6xl mb-8 md:mb-16 z-10 px-4">
+        <div className="aspect-square md:aspect-video relative rounded-lg overflow-hidden shadow-lg shadow-teal-900/20">
           {/* Marquee scrolling images */}
           <div className="h-full w-full relative overflow-hidden bg-black/30">
             <div 
-              className="flex absolute gap-3 top-0 h-full" 
+              className="flex absolute gap-1 md:gap-3 top-0 h-full" 
               style={{ transform: `translateX(-${scrollPosition}px)` }}
             >
               {images.concat(images).map((src, index) => (
-                <div key={index} className="flex-shrink-0" style={{ width: "400px", height: "80%" }}>
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 h-[100%] md:h-[80%]" 
+                  style={{ width: "400px" }} // Smaller on mobile
+
+                >
                   <img 
                     src={src} 
                     alt={`Album image ${index + 1}`} 
@@ -224,23 +117,6 @@ export default function Glimpses() {
             </div>
           </div>
         </div>
-        
-        {/* Auto-scroll toggle button */}
-        <div className="flex justify-center mt-4">
-          <button 
-            onClick={toggleAutoScroll}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none
-              ${isAutoScrolling 
-                ? 'bg-teal-600 text-white hover:bg-teal-700' 
-                : 'bg-gray-800 text-teal-400 hover:bg-gray-700'}`}
-          >
-            {isAutoScrolling ? 'Auto-Scrolling: ON' : 'Auto-Scrolling: OFF'}
-          </button>
-        </div>
-        
-        <p className="text-center text-teal-100/60 text-xs mt-2">
-          {!isAutoScrolling ? 'Drag to scroll through images' : 'Click to pause and scroll manually'}
-        </p>
       </div>
     </div>
   );
