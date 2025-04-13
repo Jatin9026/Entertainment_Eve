@@ -6,11 +6,11 @@ export default function Glimpses() {
 
   // Images for the marquee (using placeholders)
   const images = [
-    "Images/image.png",
-    "Images/image.png",
-    "Images/image.png",
-    "Images/image.png",
-    "Images/image.png"
+    "public/WhatsApp Image 2025-04-13 at 15.04.40_23c99771.jpg",
+    "public/WhatsApp Image 2025-04-13 at 15.04.42_c0c526af.jpg",
+    "",
+    "",
+    ""
   ];
 
   // Animate the marquee and waves
