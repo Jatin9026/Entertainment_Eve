@@ -15,10 +15,10 @@ export default function Glimpses() {
     "glimp7.jpg"
   ];
 
-  // Animate the marquee and waves
+  // Animate the marquee and waves with increased speed
   useEffect(() => {
     const animationFrame = requestAnimationFrame(function animate() {
-      setScrollPosition(prev => (prev + 0.5) % (images.length * 300)); // Adjusted for smaller image width
+      setScrollPosition(prev => (prev + 1.5) % (images.length * 300)); // Increased from 0.5 to 1.5
       setWaveOffset(prev => (prev + 0.2) % 1000);
       requestAnimationFrame(animate);
     });
@@ -29,8 +29,6 @@ export default function Glimpses() {
   return (
     <div className="bg-gradient-to-b from-black via-[#001a1a] to-black w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       
-      
-
       {/* Background Audio Wave Decorations - Enhanced Animation */}
       <div className="absolute left-0 right-0 bottom-0 top-0 flex items-center pointer-events-none z-0">
         <svg className="w-full h-full" viewBox="0 0 1200 600">
@@ -96,18 +94,28 @@ export default function Glimpses() {
         </svg>
       </div>
       
-      {/* Accent circle with pulse animation */}
-      {/* <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500 animate-ping opacity-30" />
-      <div className="absolute left-1/4 top-1/4 w-8 h-8 rounded-full bg-teal-500" /> */}
-      
-      {/* Album Text with animated reveal */}
-      <div className="text-center mb-8 z-10 overflow-hidden">
-        <div className="relative">
-          <p className="text-teal-500 font-medium mb-2 animate-fade-in">Glimpses</p>
+      {/* New Creative Heading */}
+      <div className="text-center mb-12 z-10">
+        <div className="relative overflow-hidden py-3">
+          <h2 className="text-teal-300 text-lg uppercase tracking-widest font-light mb-3 animate-pulse">
+            Time Fragments
+          </h2>
           <div className="overflow-hidden">
-            <h1 className="text-white text-4xl md:text-5xl font-bold mb-2 animate-slide-in-left">
-              PAST MEMORIES
+            <h1 className="text-white text-4xl md:text-6xl font-bold mb-3 animate-slide-in-left">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500">GLIMPSES</span>
             </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h3 className="text-white text-3xl md:text-4xl font-bold mb-2 animate-slide-in-right">
+              OF THE PAST
+            </h3>
+          </div>
+          
+          <div className="relative mt-4">
+            <div className="h-px w-16 bg-teal-500 mx-auto"></div>
+            <p className="text-teal-100/70 mt-4 max-w-md mx-auto text-sm italic">
+              A visual journey through moments frozen in time
+            </p>
           </div>
           
           <div className="absolute -z-10 left-1/2 top-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 blur-2xl opacity-30">
@@ -115,7 +123,7 @@ export default function Glimpses() {
         </div>
       </div>
 
-      {/* Album Artwork with Marquee - Images Only */}
+      {/* Album Artwork with Marquee - Images Only - Now with faster speed */}
       <div className="relative w-full max-w-4xl mb-16 z-10">
         <div className="aspect-video relative rounded-lg overflow-hidden shadow-lg shadow-teal-900/20">
           {/* Marquee scrolling images */}
@@ -137,9 +145,6 @@ export default function Glimpses() {
           </div>
         </div>
       </div>
-
-      {/* Photo Gallery Text */}
-      
     </div>
   );
 }
