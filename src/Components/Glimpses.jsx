@@ -6,11 +6,13 @@ export default function Glimpses() {
 
   // Images for the marquee (using placeholders)
   const images = [
-    "public/WhatsApp Image 2025-04-13 at 15.04.40_23c99771.jpg",
-    "public/WhatsApp Image 2025-04-13 at 15.04.42_c0c526af.jpg",
-    "",
-    "",
-    ""
+    "glimp1.jpg",
+    "glimp2.jpg",
+    "glimp3.jpg",
+    "glimp4.jpg",
+    "glimp5.jpg",
+    "glimp6.jpg",
+    "glimp7.jpg"
   ];
 
   // Animate the marquee and waves
@@ -107,13 +109,8 @@ export default function Glimpses() {
               PAST MEMORIES
             </h1>
           </div>
-          <div className="overflow-hidden">
-            <h2 className="text-teal-400 text-4xl md:text-5xl font-bold animate-slide-in-right animate-glow">
-             efwefrre
-            </h2>
-          </div>
+          
           <div className="absolute -z-10 left-1/2 top-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 blur-2xl opacity-30">
-            <div className="absolute w-1/2 h-1/2 bg-teal-500 rounded-full animate-pulse-slow" />
           </div>
         </div>
       </div>
