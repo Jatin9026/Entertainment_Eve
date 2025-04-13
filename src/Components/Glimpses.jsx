@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Glimpses() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [waveOffset, setWaveOffset] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const marqueeRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   // Images for the marquee (using placeholders)
   const images = [
@@ -12,19 +17,83 @@ export default function Glimpses() {
     "glimp4.jpg",
     "glimp5.jpg",
     "glimp6.jpg",
-    "glimp7.jpg"
+    "glimp7.jpg",
+    "glimp8.jpg"
   ];
 
-  // Animate the marquee and waves with increased speed
+  // Total width calculation for the marquee
+  const totalWidth = images.length * 400; // Adjusted for 400px image width
+
+  // Animate the marquee and waves
   useEffect(() => {
-    const animationFrame = requestAnimationFrame(function animate() {
-      setScrollPosition(prev => (prev + 1.5) % (images.length * 300)); // Increased from 0.5 to 1.5
-      setWaveOffset(prev => (prev + 0.2) % 1000);
-      requestAnimationFrame(animate);
-    });
+    let animationFrame;
+    
+    if (isAutoScrolling) {
+      animationFrame = requestAnimationFrame(function animate() {
+        setScrollPosition(prev => (prev + 1.5) % totalWidth); // Increased speed from 0.5 to 1.5
+        setWaveOffset(prev => (prev + 0.2) % 1000);
+        animationFrame = requestAnimationFrame(animate);
+      });
+    } else {
+      // Still animate waves when auto-scroll is off
+      animationFrame = requestAnimationFrame(function animate() {
+        setWaveOffset(prev => (prev + 0.2) % 1000);
+        animationFrame = requestAnimationFrame(animate);
+      });
+    }
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [images.length]);
+  }, [isAutoScrolling, totalWidth]);
+
+  // Mouse and touch event handlers for manual scrolling
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - marqueeRef.current.offsetLeft);
+    setScrollLeft(scrollPosition);
+    setIsAutoScrolling(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - marqueeRef.current.offsetLeft;
+    const walk = (startX - x) * 2; // Multiplier for faster scrolling
+    let newPosition = scrollLeft + walk;
+    
+    // Ensure looping behavior
+    if (newPosition < 0) newPosition = totalWidth + newPosition;
+    if (newPosition > totalWidth) newPosition = newPosition % totalWidth;
+    
+    setScrollPosition(newPosition);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - marqueeRef.current.offsetLeft);
+    setScrollLeft(scrollPosition);
+    setIsAutoScrolling(false);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - marqueeRef.current.offsetLeft;
+    const walk = (startX - x) * 2;
+    let newPosition = scrollLeft + walk;
+    
+    // Ensure looping behavior
+    if (newPosition < 0) newPosition = totalWidth + newPosition;
+    if (newPosition > totalWidth) newPosition = newPosition % totalWidth;
+    
+    setScrollPosition(newPosition);
+  };
+
+  const toggleAutoScroll = () => {
+    setIsAutoScrolling(!isAutoScrolling);
+  };
 
   return (
     <div className="bg-gradient-to-b from-black via-[#001a1a] to-black w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -122,28 +191,56 @@ export default function Glimpses() {
           </div>
         </div>
       </div>
-
-      {/* Album Artwork with Marquee - Images Only - Now with faster speed */}
-      <div className="relative w-full max-w-4xl mb-16 z-10">
-        <div className="aspect-video relative rounded-lg overflow-hidden shadow-lg shadow-teal-900/20">
+      
+      {/* Album Artwork with Marquee - Images Only */}
+      <div className="relative w-full max-w-6xl mb-6 z-10">
+        <div 
+          ref={marqueeRef}
+          className="aspect-video relative rounded-lg overflow-hidden shadow-lg shadow-teal-900/20"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleMouseUp}
+          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+        >
           {/* Marquee scrolling images */}
           <div className="h-full w-full relative overflow-hidden bg-black/30">
             <div 
-              className="flex absolute top-0 h-full" 
+              className="flex absolute gap-3 top-0 h-full" 
               style={{ transform: `translateX(-${scrollPosition}px)` }}
             >
               {images.concat(images).map((src, index) => (
-                <div key={index} className="flex-shrink-0" style={{ width: "300px" }}>
+                <div key={index} className="flex-shrink-0" style={{ width: "400px", height: "80%" }}>
                   <img 
                     src={src} 
                     alt={`Album image ${index + 1}`} 
-                    className="h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}
             </div>
           </div>
         </div>
+        
+        {/* Auto-scroll toggle button */}
+        <div className="flex justify-center mt-4">
+          <button 
+            onClick={toggleAutoScroll}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none
+              ${isAutoScrolling 
+                ? 'bg-teal-600 text-white hover:bg-teal-700' 
+                : 'bg-gray-800 text-teal-400 hover:bg-gray-700'}`}
+          >
+            {isAutoScrolling ? 'Auto-Scrolling: ON' : 'Auto-Scrolling: OFF'}
+          </button>
+        </div>
+        
+        <p className="text-center text-teal-100/60 text-xs mt-2">
+          {!isAutoScrolling ? 'Drag to scroll through images' : 'Click to pause and scroll manually'}
+        </p>
       </div>
     </div>
   );
